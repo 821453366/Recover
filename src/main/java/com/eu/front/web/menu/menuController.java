@@ -9,16 +9,33 @@ import javax.servlet.http.HttpServlet;
  * Created 马欢欢 pc on 2017/5/23.
  */
 @Controller
-@RequestMapping("/menuFront")
+@RequestMapping("/menu")
 public class menuController extends HttpServlet {
 
+    //创客访问量
     @RequestMapping("/tronClass")
     public String tronClass() {
-        return "tronClassFront/tronClass";
+        return "tronClass/tronClass";
     }
-    @RequestMapping("/professionalDiscipline")
+    //教室利用率
+    @RequestMapping("/classUserRate")
+    public String classUserRate() {
+        return "UserRate/classUserRate/classUserRate";
+    }
+    //工作室利用率
+    @RequestMapping("/studioClassFront")
+    public String studioClassFront() {
+        return "UserRate/studioClassFront/studioClassFront";
+    }
+    //学籍异动
+    @RequestMapping("/leaveReason")
+    public String leaveReason() {
+        return "schoolChange/leaveReason/leaveReason";
+    }
+    //权限菜单
+    @RequestMapping("/superUserInfo")
     public String superUserInfo() {
-        return "professionalDisciplineFront/professionalDiscipline";
+        return "userInfo/superUserInfo";
     }
     @RequestMapping("/firstUserInfo")
     public String firstUserInfo() {
@@ -30,7 +47,7 @@ public class menuController extends HttpServlet {
     }
     @RequestMapping("/thirdUserInfo")
     public String thirdUserInfo() {
-        return "UserInfo/thirdUserInfo";
+        return "userInfo/thirdUserInfo";
     }
 
 
