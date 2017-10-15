@@ -45,22 +45,6 @@ public class LoginController extends HttpServlet {
         return data;
     }
 
-    //权限
-    @RequestMapping("/rank")
-    @ResponseBody
-    public Map<String, Object> rank(HttpSession session) {
-        Map<String, Object> result = new HashMap<String, Object>();
-        try {
-            Admin admin = (Admin) session.getAttribute("user");
-
-            result.put("admin", admin);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return result;
-    }
-
     //判断是否有session
     @RequestMapping("/session")
     @ResponseBody
@@ -80,7 +64,7 @@ public class LoginController extends HttpServlet {
         return result;
     }
     //登出
-    @RequestMapping("/out")
+    @RequestMapping("/outSession")
     @ResponseBody
     public Map<String, Object> out(HttpSession session) {
         Map<String, Object> result = new HashMap<String, Object>();

@@ -19,6 +19,7 @@
 	<link rel="stylesheet" href="${baseurl}/public/common/layui/css/layui.css" media="all"/>
 	<link rel="stylesheet" href="${baseurl}/css/global.css" media="all">
 	<link rel="stylesheet" href="${baseurl}/plugins/font-awesome/css/font-awesome.min.css">
+	<script type="text/javascript" src="${baseurl}/js/myjs/jquery.min.js"></script>
 	<script type="text/javascript" src="${baseurl}/plugins/layui/layui.js"></script>
 	<script type="text/javascript" src="${baseurl}/datas/nav.js"></script>
 	<script src="${baseurl}/js/index.js"></script>
@@ -28,7 +29,7 @@
     let imgName;
     $(function () {
         //判断session是否存在
-        $.post("${pageContext.request.contextPath}/login/session",
+        $.post("${pageContext.request.contextPath}/session",
             function (data) {
                 if (!data.haveSession) {
                     window.location.href = "${baseurl}";
@@ -50,8 +51,10 @@
     });
     //退出登录
     function out() {
-        $.post("${pageContext.request.contextPath}/out",
+        alert(111)
+        $.post("${pageContext.request.contextPath}/outSession",
             function (data) {
+            alert(222)
                 layer.msg(data.msg, {
                     time: 1000
                 }, function () {
@@ -157,7 +160,7 @@
 				<li class="layui-nav-item">
 					<a href="javascript:;" class="admin-header-user">
 						<img id="images" src="${baseurl}/public/images/user.jpg"/>
-						<span id = "Name">管理员</span>
+						<span id = "Name" style="color: #FFFFFF">管理员</span>
 					</a>
 					<dl
 							class="layui-nav-child">
