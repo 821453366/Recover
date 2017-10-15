@@ -1,12 +1,12 @@
 var navs = [{
     "title": "添加账目",
     "icon": "fa fa-bar-chart-o",
-    "href": "menuFront/tronClass",
+    "href": "menu/tronClass",
     "spread": false
 },{
     "title": "添加账目",
     "icon": "fa fa-newspaper-o",
-    "href": "menuFront/professionalDiscipline",
+    "href": "menu/professionalDiscipline",
     "spread": false
 },{
 	"title": "添加账目",

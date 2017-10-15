@@ -15,7 +15,7 @@ public class menuController extends HttpServlet {
     //创客访问量
     @RequestMapping("/tronClass")
     public String tronClass() {
-        return "tronClass/tronClass";
+        return "web/user/user";
     }
     //教室利用率
     @RequestMapping("/classUserRate")
