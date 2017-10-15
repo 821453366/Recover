@@ -16,7 +16,7 @@
 	<meta name="apple-mobile-com.eu.dss.web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
 
-	<link rel="stylesheet" href="${baseurl}/css/layui.css" media="all" />
+	<link rel="stylesheet" href="${baseurl}/public/common/layui/css/layui.css" media="all"/>
 	<link rel="stylesheet" href="${baseurl}/css/global.css" media="all">
 	<link rel="stylesheet" href="${baseurl}/plugins/font-awesome/css/font-awesome.min.css">
 	<script type="text/javascript" src="${baseurl}/plugins/layui/layui.js"></script>
@@ -147,7 +147,7 @@
 		<div class="layui-main">
 			<div class="admin-login-box">
 				<a class="logo" style="left: 0;">
-					<span style="font-size: 18px;font-weight: bold">隆兴公司账目管理系统</span>
+					<span style="font-size: 18px;font-weight: bold;color: #FFFFFF">隆兴公司账目管理系统</span>
 				</a>
 				<div class="admin-side-toggle">
 					<i class="fa fa-bars" aria-hidden="true"></i>
