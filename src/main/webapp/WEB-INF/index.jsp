@@ -201,10 +201,9 @@
 	</div>
 	<div class="layui-footer footer footer-demo" >
 		<div class="layui-main">
-			<p><a href="index.jsp">recover.com</a>recover © 2017</p>
+			<p><br></p>
 			<p>
-				<a href="#" target="_blank">隆兴公司废钢回收账目管理系统</a>
-				<a href="#">联系我们</a>
+				<a href="#" target="_blank">隆兴公司废钢回收账目管理系统 © 2017</a>
 			</p>
 		</div>
 	</div>

@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="${baseurl}/public/css/eu_manage.css" media="all">
     <script type="text/javascript" src="${baseurl}/public/js/button_js.js" charset="utf-8"></script>
 </head>
+<style>
+    .layui-table td, .layui-table th{
+        text-align: center;
+    }
+</style>
 <body>
 <div class="admin-main">
     <blockquote class="layui-elem-quote">
@@ -33,15 +38,15 @@
 
     <fieldset class="layui-elem-field">
         <legend>管理员</legend>
-        <div>
+        <div style="margin: 20px;">
             <table class="site-table layui-table table-hover ">
                 <thead>
                 <tr>
                     <th>编号</th>
-                    <th>管理级别</th>
-                    <th>用户姓名</th>
+                    <th>姓名</th>
                     <th>用户ID</th>
-                    <th>性别</th>
+                    <th>年龄</th>
+                    <th>手机号</th>
                     <th>创建时间</th>
                     <th>操作</th>
                 </tr>
@@ -51,7 +56,7 @@
                 </tbody>
             </table>
         </div>
-        <div id="demo1"></div>
+        <div style="margin: 25px;"id="demo1"></div>
         <ul id="biuuu_city_list"></ul>
     </fieldset>
 </div>
