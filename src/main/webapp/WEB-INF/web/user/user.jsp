@@ -117,17 +117,6 @@
                 <input type="radio" name="sex" value="女" title="女" >
             </div>
         </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">账户权限：</label>
-            <div class="layui-input-inline">
-                <select name="rank" >
-                    <option value="0" selected="">超级管理员</option>
-                    <option value="1" >一级管理员</option>
-                    <option value="2">二级管理员</option>
-                    <option value="3">三级管理员</option>
-                </select>
-            </div>
-        </div>
         <div class="layui-input-block huan_center">
             <button class="layui-btn" lay-submit="" type="submit" onclick="cl.updateAjax()">立即提交</button>
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>

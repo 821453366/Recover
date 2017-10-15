@@ -167,12 +167,7 @@
 						<dd>
 							<a style="cursor:pointer" onclick="updateInfo()"><i class="fa fa-gear" aria-hidden="true"></i> 设置</a>
 						</dd>
-						<dd id="lock">
-							<a href="javascript:;">
-								<i class="fa fa-lock" aria-hidden="true"
-								   style="padding-right: 3px;padding-left: 1px;"></i> 锁屏 (Alt+L)
-							</a>
-						</dd>
+						
 						<dd>
 							<a style="cursor:pointer" onclick="out()"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a>
 						</dd>
