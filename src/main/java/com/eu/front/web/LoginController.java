@@ -85,10 +85,10 @@ public class LoginController extends HttpServlet {
     public Map<String, Object> userInfo(HttpSession session) {
         Map<String, Object> result = new HashMap<String, Object>();
         try {
-            String username = ((Admin)session.getAttribute("user")).getAdminRealname();
-           Admin admin = loginService.queryUserInfo(username);
+            String username = ((Admin)session.getAttribute("user")).getAdminName();
+           Admin user = loginService.queryUserInfo(username);
             result.put("msg", Constant.ACCOUNT_OUT);
-            result.put("admin", admin);
+            result.put("user", user);
         } catch (Exception e) {
             e.printStackTrace();
         }
