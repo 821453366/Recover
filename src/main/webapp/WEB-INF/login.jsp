@@ -16,7 +16,6 @@
         <strong>隆兴公司废钢回收账目管理系统</strong>
         <%--<em>Management System</em>--%>
     </h1>
-    <form >
     <div class="layui-user-icon larry-login">
         <input type="text" placeholder="账号" id="userName" required class="login_txtbx"/>
     </div>
@@ -26,7 +25,6 @@
     <div class="layui-submit larry-login" style="margin-top: 20px;width:90%">
         <button   onclick="login()"  class="submit_btn">立即登录</button>
     </div>
-    </form>
     <div class="layui-login-text">
     </div>
 
