@@ -10,18 +10,6 @@ public interface LoginService {
      */
     Admin login(Admin admin);
 
-    /**
-     * 查找用户信息
-     * @param username
-     * @return
-     */
-    Admin queryUserInfo(String username);
-
-    /**
-     * 更新用户信息
-     * @param admin
-     */
-    void updateUserInfo(Admin admin);
 
 
 

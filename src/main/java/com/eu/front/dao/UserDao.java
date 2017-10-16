@@ -25,4 +25,23 @@ public interface UserDao {
      * @param id
      */
     void deleteUser(String id) throws Exception;
+
+    /**
+     * 通过ID查询用户信息
+     * @param id
+     * @return
+     */
+    List<Admin> findById(int id) throws Exception;
+
+    /**
+     * 查找用户信息
+     * @param username
+     * @return
+     */
+    Admin queryUserInfo(String username);
+    /**
+     * 更新用户信息
+     * @param admin
+     */
+    void updateUserInfo(Admin admin);
 }

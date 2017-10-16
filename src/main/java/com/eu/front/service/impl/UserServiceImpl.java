@@ -48,4 +48,26 @@ public class UserServiceImpl implements UserService {
     public void deleteUser(String id) throws Exception{
         userDao.deleteUser(id);
     }
+    @Override
+    public List<Admin> findById(int id)throws Exception {
+        return userDao.findById(id);
+    }
+
+    @Override
+    public Admin queryUserInfo(String username) {
+        try {
+            return userDao.queryUserInfo(username);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void updateUserInfo(Admin admin) {
+        try {
+            userDao.updateUserInfo(admin);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

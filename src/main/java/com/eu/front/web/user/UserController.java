@@ -4,12 +4,15 @@ import com.eu.front.dto.Result;
 import com.eu.front.entity.Admin;
 import com.eu.front.service.UserService;
 import com.eu.front.utils.Constant;
+import com.eu.front.utils.ImgUtil;
 import com.eu.front.utils.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,12 +47,12 @@ public class UserController {
     public Result addUser(Admin admin) {
         try {
             userService.addUser(admin);
-            return Result.success(null, Constant.UPDATE_SUCCESS);
+            return Result.success(null, Constant.ADD_SUCCESS);
         } catch (Exception e) {
             new RuntimeException(e);
         }
 
-        return Result.failure(null, Constant.UPDATE_FAILURE);
+        return Result.failure(null, Constant.ADD_FAILURE);
     }
 
     @RequestMapping("/deleteUser")
@@ -65,6 +68,51 @@ public class UserController {
             result.put("msg", Constant.DELETE_FAILURE);
         }
         return result;
+    }
+
+    @RequestMapping("/userInfo")
+    @ResponseBody
+    public Map<String, Object> findById(int id) {
+        Map<String, Object> result = new HashMap<String, Object>();
+        try {
+            result.put("user", userService.findById(id));
+            result.put("msg", Constant.SEARCH_SUCCESS);
+            result.put("result", true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            result.put("msg", Constant.SEARCH_FAILURE);
+        }
+
+        return result;
+    }
+    //用户信息
+    @RequestMapping("/updateInfoAjax")
+    @ResponseBody
+    public Map<String, Object> updateInfoAjax(Admin user) {
+        Map<String, Object> result = new HashMap<String, Object>();
+        try {
+            userService.updateUserInfo(user);
+            result.put("msg", Constant.UPDATE_SUCCESS);
+        } catch (Exception e) {
+            e.printStackTrace();
+            result.put("msg", Constant.UPDATE_FAILURE);
+        }
+
+        return result;
+    }
+    @RequestMapping("/updateImage")
+    @ResponseBody
+    public Result updateImage(MultipartFile file, HttpServletRequest request) {
+        try {
+            String imgPath = ImgUtil.saveImg(file, request.getServletContext().getRealPath("/images") + Constant.USER_IMAGE_PATH);
+            String imgName = imgPath.substring(imgPath.lastIndexOf("/"));
+
+            return Result.success(imgName, Constant.UPLOAD_SUCCESS);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return Result.failure(null, Constant.UPDATE_FAILURE);
     }
 
 }

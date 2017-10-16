@@ -9,6 +9,7 @@
     <title>Table</title>
     <link rel="stylesheet" href="${baseurl}/public/common/layui/css/layui.css" media="all"/>
     <link rel="stylesheet" href="${baseurl}/public/common/css/global.css" media="all">
+    <link rel="stylesheet" href="${baseurl}/public/css/global.css" media="all">
     <link rel="stylesheet" href="${baseurl}/plugins/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="${baseurl}/public/css/table.css"/>
     <script type="text/javascript" src="${baseurl}/js/myjs/jquery.min.js"></script>
@@ -65,20 +66,20 @@
     {{# layui.each(d.user, function(index, item){ }}
     <tr>
         <td>{{ index+1}}</td>
-        <td>{{ item.admin_realname}}</td>
-        <th>{{item.admin_name}}</th>
-        <th>{{item.admin_sex}}</th>
-        <th>{{item.admin_age}}</th>
-        <th>{{item.admin_phone}}</th>
-        <th>{{item.admin_date}}</th>
+        <td>{{item.admin_realname  == undefined ? "暂无" : item.admin_realname}}</td>
+        <th>{{item.admin_name == undefined ? "暂无" : item.admin_name}}</th>
+        <th>{{item.admin_sex == undefined ? "暂无" : item.admin_sex}}</th>
+        <th>{{item.admin_age == undefined ? "暂无" : item.admin_age}}</th>
+        <th>{{item.admin_phone == undefined ? "暂无" : item.admin_phone}}</th>
+        <th>{{item.admin_date == undefined ? "暂无" : item.admin_date}}</th>
         <td>
             <a class="layui-btn layui-btn-small layui-btn-normal  layui-icon "
-               onclick="cl.preview('{{item.admin_name}}')">
+               onclick="cl.preview('{{item.id}}')">
                 &#xe60a; 预览
             </a>
-            <button class='layui-btn layui-btn-small layui-icon'>&#xe642;编辑</button>
+            <button class='layui-btn layui-btn-small layui-icon' onclick="cl.updateInfo('{{item.id}}')">&#xe642;编辑</button>
             <button data-id='1' data-opt='del' class='layui-btn layui-btn-danger layui-btn-small layui-icon'
-                    onclick="cl.delete('{{item.admin_name}}')">
+                    onclick="cl.delete('{{item.id}}')">
                 &#xe640;删除
             </button>
         </td>
@@ -129,23 +130,130 @@
 
     </form>
 </div>
-
 <div id="preview" style="display: none">
-    <div style="margin: 0 10%;">
-        <fieldset class="layui-elem-field site-demo-button" style="padding:40px;">
-            <legend>一级管理员详情信息</legend>
-            <table class="site-table table-hover ">
-                <thead>
-                <tr>
-                    <th>信息</th>
-                    <th>详情</th>
-                </tr>
-                </thead>
-                <tbody id="userInfo">
+    <fieldset class="layui-elem-field layui-field-title" >
+        <legend>管理员信息</legend>
+    </fieldset>
+    <div style="margin-left: 45%;">
+        <div style="width:100px; height: 140px;margin-left: 50px;">
+            <img id="imagesInfo" src="${baseurl}/public/images/user.jpg" class="site-demo-upload"/>
+        </div>
+        <div style="margin-top: 100px;">
 
-                </tbody>
-            </table>
-        </fieldset>
+        </div>
+    </div>
+    <div style="margin-left: 45%;margin-top: 50px;">
+        <form class="layui-form layui-form-pane" action="">
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户姓名:</label>
+                <div class="layui-input-inline">
+                    <input readonly="readonly" type="text" id="adminRealnamePreview" lay-verify="required"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户ID：</label>
+                <div class="layui-input-inline">
+                    <input readonly="readonly" type="text" id="adminNamePreview" lay-verify="required"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">性别：</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="adminSexPreview" lay-verify="required" placeholder="请输入" autocomplete="off"
+                           class="layui-input" readonly="readonly">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">年龄：</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="adminAgePreview" lay-verify="required" placeholder="请输入" autocomplete="off"
+                           class="layui-input" readonly="readonly">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">手机号：</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="adminPhonePreview" lay-verify="required" placeholder="请输入" autocomplete="off"
+                           class="layui-input" readonly="readonly">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">账号创建日期：</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="adminDatePreview" lay-verify="required" placeholder="请输入" autocomplete="off"
+                           class="layui-input" readonly="readonly">
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<div id="updateInfo" style="display: none">
+    <fieldset class="layui-elem-field layui-field-title" >
+        <legend>管理员信息</legend>
+    </fieldset>
+    <div style="margin-left: 45%;">
+        <div style="width:100px; height: 140px;margin-left: 50px;">
+            <img id="imagesToUpdate" class="site-demo-upload"/>
+        </div>
+        <div style="margin-top: 100px;">
+            <input type="file" name="file" class="layui-upload-file" style="width: auto"
+                   lay-title="头像上传">
+        </div>
+    </div>
+    <div style="margin-left: 45%;margin-top: 50px;">
+        <form class="layui-form layui-form-pane" action="">
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户姓名:</label>
+                <div class="layui-input-inline">
+                    <input readonly="readonly" type="text" id="adminRealnameUpdate" lay-verify="required"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户ID：</label>
+                <div class="layui-input-inline">
+                    <input readonly="readonly" type="text" id="adminNameUpdate" lay-verify="required"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">性别：</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="adminSexUpdate" lay-verify="required" placeholder="请输入" autocomplete="off"
+                           class="layui-input" readonly="readonly">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">年龄：</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="adminAgeUpdate" lay-verify="required" placeholder="请输入" autocomplete="off"
+                           class="layui-input" readonly="readonly">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">手机号：</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="adminPhoneUpdate" lay-verify="required" placeholder="请输入" autocomplete="off"
+                           class="layui-input" readonly="readonly">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">账号创建日期：</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="adminDateUpdate" lay-verify="required" placeholder="请输入" autocomplete="off"
+                           class="layui-input" readonly="readonly">
+                </div>
+            </div>
+            <button style="margin-left: 80px; width: 150px;margin-bottom: 50px;" class="layui-btn"
+                    onclick="cl.updateInfoAjax()"><i class="layui-icon">&#xe61f;</i>
+                完成修改
+            </button>
+        </form>
     </div>
 </div>
 <script type="text/javascript" src="${baseurl}/public/common/layui/layui.js"></script>
@@ -154,6 +262,7 @@
     let currentIndex = 1;
     let pageSize = 10;
     let cl;
+    let imgName;
     layui.use(['jquery', 'layer', 'element', 'laypage', 'form', 'laytpl', 'tree'], function () {
         window.jQuery = window.$ = layui.jquery;
         window.layer = layui.layer;
@@ -200,6 +309,20 @@
                 );
             },
             preview: function (id) {
+                $.post("${pageContext.request.contextPath}/user/userInfo",
+                    {id:id},
+                    function (data) {
+                        console.log(data)
+                        let user = data.user[0];
+                        $("#imagesInfo").text("").attr("src", HEAD_IMAGE_PREFIX + user.adminImg);
+                        $("#adminNamePreview").val(user.adminName);
+                        $("#adminRealnamePreview").val(user.adminRealname);
+                        $("#adminAgePreview").val(user.adminAge);
+                        $("#adminSexPreview").val(user.adminSex);
+                        $("#adminPhonePreview").val(user.adminPhone);
+                        $("#adminDatePreview").val(user.adminDate);
+                    }
+                )
                 layer.open({
                     type: 1,
                     title: '管理员信息'
@@ -208,6 +331,50 @@
                 });
 
             },
+            //用户信息
+            updateInfo: function (id) {
+            $.post("${pageContext.request.contextPath}/user/userInfo",{id:id},
+                function (data) {
+                    let user = data.user[0];
+                    $("#imagesToUpdate").text("").attr("src", HEAD_IMAGE_PREFIX + user.adminImg);
+                    imgName = user.img;
+                    $("#adminRealnameUpdate").val(user.adminRealname);
+                    $("#adminNameUpdate").val(user.adminName);
+                    $("#adminSexUpdate").val(user.adminSex);
+                    $("#adminAgeUpdate").val(user.adminAge);
+                    $("#adminPhoneUpdate").val(user.adminPhone);
+                    $("#adminDateUpdate").val(user.adminDate);
+                    layer.open({
+                        type: 1,
+                        title: "用户信息",
+                        area: ["100%", "100%"],
+                        closeBtn: 1,
+                        content: $("#updateInfo")
+                    })
+
+                }
+            )
+        },
+            //用户信息
+            updateInfoAjax: function () {
+            let adminRealnameUpdate = $("#adminRealnameUpdate").val();
+            let adminNameUpdate = $("#adminNameUpdate").val();
+            let adminSexUpdate = $("#adminSexUpdate").val();
+            let adminAgeUpdate = $("#adminAgeUpdate").val();
+            let adminPhoneUpdate = $("#adminPhoneUpdate").val();
+            $.post("${pageContext.request.contextPath}/user/updateInfoAjax", {
+                    adminImg: imgName,
+                    adminRealname:adminRealnameUpdate,
+                    adminName:adminNameUpdate,
+                    adminSex:adminSexUpdate,
+                    adminAge:adminAgeUpdate,
+                    adminPhone:adminPhoneUpdate
+                },
+                function (data) {
+                    layer.msg(data.msg);
+                }
+            )
+        },
             addUser: function () {
                 layer.open({
                     type: 1,
@@ -237,10 +404,24 @@
                         });
                 });
             },
-
         }
         $(function () {
             cl.list();
+        });
+    });
+
+    //图片上传
+    layui.use('upload', function () {
+
+        layui.upload({
+            url: '${pageContext.request.contextPath}/user/updateImage' //上传接口
+            , success: function (res) { //上传成功后的回调
+                alert(111)
+                if (res.result) {
+                    $("#imagesToUpdate").text("").attr("src", HEAD_IMAGE_PREFIX + res.data);
+                    imgName = res.data;
+                }
+            }
         });
     });
 </script>

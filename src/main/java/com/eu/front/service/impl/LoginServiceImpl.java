@@ -28,21 +28,5 @@ public class LoginServiceImpl implements LoginService {
         return null;
     }
 
-    @Override
-    public Admin queryUserInfo(String username) {
-        try {
-            return loginDao.queryUserInfo(username);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
 
-    @Override
-    public void updateUserInfo(Admin admin) {
-        try {
-             loginDao.updateUserInfo(admin);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
 }

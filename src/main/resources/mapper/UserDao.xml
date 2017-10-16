@@ -17,9 +17,9 @@
         VALUES (#{adminName},#{adminPassword},#{adminRealname},#{adminSex},#{adminAge},#{adminImg},#{adminPhone},#{adminDate})
     </update>
     <delete id="deleteUser" parameterType="string">
-        delete  from tb_admin where admin_name =#{id}
+        delete  from tb_admin where id =#{id}
     </delete>
-    <select id="searchUserByName" resultType="User" parameterType="String">
-        select * from dssuser where nickname like #{username}
+    <select id="findById" parameterType="int" resultType="Admin">
+        SELECT * from tb_admin where id=#{id}
     </select>
 </mapper>
