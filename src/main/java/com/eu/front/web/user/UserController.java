@@ -1,5 +1,7 @@
 package com.eu.front.web.user;
 
+import com.eu.front.dto.Result;
+import com.eu.front.entity.Admin;
 import com.eu.front.service.UserService;
 import com.eu.front.utils.Constant;
 import com.eu.front.utils.PageUtil;
@@ -20,11 +22,11 @@ public class UserController {
 
     @RequestMapping("/findUser")
     @ResponseBody
-    public Map<String, Object> insertProfession(PageUtil page){
+    public Map<String, Object> insertProfession(PageUtil page,String adminRealname){
         Map<String, Object> data = new HashMap<String, Object>();
         List<Map<String,String>> TronClass;
         try {
-            TronClass = userService.insertUser(page);
+            TronClass = userService.insertUser(page,adminRealname);
             data.put("user", TronClass);
             data.put("page", page);
             data.put("result", true);
@@ -35,6 +37,34 @@ public class UserController {
         }
 
         return data;
+    }
+
+    @RequestMapping("/addUser")
+    @ResponseBody
+    public Result addUser(Admin admin) {
+        try {
+            userService.addUser(admin);
+            return Result.success(null, Constant.UPDATE_SUCCESS);
+        } catch (Exception e) {
+            new RuntimeException(e);
+        }
+
+        return Result.failure(null, Constant.UPDATE_FAILURE);
+    }
+
+    @RequestMapping("/deleteUser")
+    @ResponseBody
+    public Map<String, Object> deleteUser(String id) {
+        Map<String, Object> result = new HashMap<String, Object>();
+        try {
+            userService.deleteUser(id);
+            result.put("msg", Constant.DELETE_SUCCESS);
+            result.put("result", true);
+        } catch (Exception e) {
+            new RuntimeException(e);
+            result.put("msg", Constant.DELETE_FAILURE);
+        }
+        return result;
     }
 
 }

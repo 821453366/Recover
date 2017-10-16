@@ -4,14 +4,22 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.eu.front.dao.UserDao">
 
-    <select id="queryUser"   resultType="map">
-        SELECT * FROM tb_admin  LIMIT #{start}, #{end}
+    <select id="queryUser" resultType="map">
+        SELECT * FROM tb_admin where admin_realname like #{adminRealname} order by id DESC  LIMIT #{start}, #{end}
     </select>
 
- <select id="queryUserCount"   resultType="long">
+    <select id="queryUserCount" resultType="long">
         SELECT count(1)
         FROM tb_admin
     </select>
-
-
+    <update id="addUser" parameterType="Admin">
+        INSERT INTO tb_admin(admin_name,admin_password,admin_realname,admin_sex,admin_age,admin_img,admin_phone,admin_date)
+        VALUES (#{adminName},#{adminPassword},#{adminRealname},#{adminSex},#{adminAge},#{adminImg},#{adminPhone},#{adminDate})
+    </update>
+    <delete id="deleteUser" parameterType="string">
+        delete  from tb_admin where admin_name =#{id}
+    </delete>
+    <select id="searchUserByName" resultType="User" parameterType="String">
+        select * from dssuser where nickname like #{username}
+    </select>
 </mapper>

@@ -123,7 +123,6 @@ public class LoginController extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return Result.failure(null, Constant.UPDATE_FAILURE);
     }
 

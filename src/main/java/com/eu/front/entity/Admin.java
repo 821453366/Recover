@@ -6,9 +6,18 @@ public class Admin {
     private String adminPassword;
     private String adminRealname;
     private String adminAge;
+    private String adminSex;
     private String adminImg;
     private String adminPhone;
     private String adminDate;
+
+    public String getAdminSex() {
+        return adminSex;
+    }
+
+    public void setAdminSex(String adminSex) {
+        this.adminSex = adminSex;
+    }
 
     public int getId() {
         return id;
