@@ -1,5 +1,5 @@
 var navs = [{
-    "title": "添加账目",
+    "title": "用户信息",
     "icon": "fa fa-bar-chart-o",
     "href": "menu/tronClass",
     "spread": false
