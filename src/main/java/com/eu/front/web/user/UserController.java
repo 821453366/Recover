@@ -88,10 +88,10 @@ public class UserController {
     //用户信息
     @RequestMapping("/updateInfoAjax")
     @ResponseBody
-    public Map<String, Object> updateInfoAjax(Admin user) {
+    public Map<String, Object> updateInfoAjax(Admin admin) {
         Map<String, Object> result = new HashMap<String, Object>();
         try {
-            userService.updateUserInfo(user);
+            userService.updateUserInfo(admin);
             result.put("msg", Constant.UPDATE_SUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
@@ -100,19 +100,4 @@ public class UserController {
 
         return result;
     }
-    @RequestMapping("/updateImage")
-    @ResponseBody
-    public Result updateImage(MultipartFile file, HttpServletRequest request) {
-        try {
-            String imgPath = ImgUtil.saveImg(file, request.getServletContext().getRealPath("/images") + Constant.USER_IMAGE_PATH);
-            String imgName = imgPath.substring(imgPath.lastIndexOf("/"));
-
-            return Result.success(imgName, Constant.UPLOAD_SUCCESS);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return Result.failure(null, Constant.UPDATE_FAILURE);
-    }
-
 }

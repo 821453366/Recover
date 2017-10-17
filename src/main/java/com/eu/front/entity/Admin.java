@@ -7,9 +7,17 @@ public class Admin {
     private String adminRealname;
     private String adminAge;
     private String adminSex;
-    private String adminImg;
+    private String adminRank;
     private String adminPhone;
     private String adminDate;
+
+    public String getAdminRank() {
+        return adminRank;
+    }
+
+    public void setAdminRank(String adminRank) {
+        this.adminRank = adminRank;
+    }
 
     public String getAdminSex() {
         return adminSex;
@@ -57,14 +65,6 @@ public class Admin {
 
     public void setAdminAge(String adminAge) {
         this.adminAge = adminAge;
-    }
-
-    public String getAdminImg() {
-        return adminImg;
-    }
-
-    public void setAdminImg(String adminImg) {
-        this.adminImg = adminImg;
     }
 
     public String getAdminPhone() {

@@ -13,8 +13,8 @@
         FROM tb_admin
     </select>
     <update id="addUser" parameterType="Admin">
-        INSERT INTO tb_admin(admin_name,admin_password,admin_realname,admin_sex,admin_age,admin_img,admin_phone,admin_date)
-        VALUES (#{adminName},#{adminPassword},#{adminRealname},#{adminSex},#{adminAge},#{adminImg},#{adminPhone},#{adminDate})
+        INSERT INTO tb_admin(admin_name,admin_password,admin_realname,admin_sex,admin_age,admin_rank,admin_phone,admin_date)
+        VALUES (#{adminName},#{adminPassword},#{adminRealname},#{adminSex},#{adminAge},#{adminRank},#{adminPhone},#{adminDate})
     </update>
     <delete id="deleteUser" parameterType="string">
         delete  from tb_admin where id =#{id}
@@ -22,4 +22,10 @@
     <select id="findById" parameterType="int" resultType="Admin">
         SELECT * from tb_admin where id=#{id}
     </select>
+    <update id="updateUserInfo" parameterType="Admin">
+      UPDATE tb_admin
+        SET tb_admin.admin_realname = #{adminRealname},tb_admin.admin_sex=#{adminSex},
+        tb_admin.admin_age=#{adminAge},tb_admin.admin_phone=#{adminPhone}
+        WHERE tb_admin.admin_name = #{adminName}
+    </update>
 </mapper>
