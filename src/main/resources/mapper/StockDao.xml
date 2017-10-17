@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eu.front.dao.StockDao">
+    <!-- Stock的resultMap,column是给数据库列起的别名,它对应property类的属性-->
+    <resultMap id="result_Stock_Map" type="com.eu.front.entity.Stock">
+        <id column="id" property="id" />
+        <result column="stock_year" property="stockYear" />
+        <result column="stock_month" property="stockMonth" />
+        <result column="stock_code" property="stockCode" />
+        <result column="stock_capacity" property="stockCapacity" />
+        <result column="stock_steel_id" property="stockSteelId" />
+    </resultMap>
+
+    <!-- 数据库中表名为:tb_stock的列名,as前是数据库的列明,as后是列的别名用于映射成实体类中的属性,需要注意的是别名必须与resultMap中的column别名一致 -->
+    <sql id="tb_stock_Column">
+        tb_stock.id as id
+        ,tb_stock.stock_year as stock_year
+        ,tb_stock.stock_month as stock_month
+        ,tb_stock.stock_code as stock_code
+        ,tb_stock.stock_capacity as stock_capacity
+        ,tb_stock.stock_steel_id as stock_steel_id
+    </sql>
+
+    <!--获得类名为:Stock对应的数据库表的数据总行数 -->
+    <select id="getStockRowCount" resultType="java.lang.Long">
+        select count(id) from tb_stock
+    </select>
+    <!-- 获得类名为:Stock对应数据库中表的数据集合 -->
+    <select id="selectStock" resultMap="result_Stock_Map">
+        select 
+        <include refid="tb_stock_Column" /> 
+        from tb_stock
+    </select> 
+
+    <!-- 获得一个Stock对象,以参数Stock对象中不为空的属性作为条件进行查询-->
+    <select id="selectStockByObj" parameterType="com.eu.front.entity.Stock" resultMap="result_Stock_Map">
+        select 
+            <include refid="tb_stock_Column" /> 
+        from tb_stock
+        <where>
+            <if test="stockSteelId != null "> and tb_stock.stock_steel_id = #{stockSteelId}</if>
+            <if test="stockCapacity != null "> and tb_stock.stock_capacity = #{stockCapacity}</if>
+            <if test="stockCode != null "> and tb_stock.stock_code = #{stockCode}</if>
+            <if test="stockMonth != null "> and tb_stock.stock_month = #{stockMonth}</if>
+            <if test="stockYear != null "> and tb_stock.stock_year = #{stockYear}</if>
+            <if test="id != null "> and tb_stock.id = #{id}</if>
+        </where>
+    </select> 
+
+    <!-- 通过Stock的id获得对应数据库中表的数据对象-->
+    <select id="selectStockById" parameterType="java.lang.Integer" resultMap="result_Stock_Map">
+        select 
+            <include refid="tb_stock_Column" /> 
+        from tb_stock
+        where tb_stock.id = #{id}
+    </select> 
+
+    <!-- 将Stock插入到对应数据库的表中,包括属性值为null的数据-->
+
+    <insert id="insertStock" parameterType="com.eu.front.entity.Stock">
+        insert into tb_stock(id,stock_year,stock_month,stock_code,stock_capacity,stock_steel_id) 
+        values(#{id},#{stockYear},#{stockMonth},#{stockCode},#{stockCapacity},#{stockSteelId})
+    </insert>
+
+    <!-- 将Stock中属性值不为null的数据,插入到对应数据库的表中-->
+    <insert id="insertNonEmptyStock" parameterType="com.eu.front.entity.Stock">
+        insert into tb_stock
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="stockYear != null">stock_year,</if>
+            <if test="stockMonth != null">stock_month,</if>
+            <if test="stockCode != null">stock_code,</if>
+            <if test="stockCapacity != null">stock_capacity,</if>
+            <if test="stockSteelId != null">stock_steel_id,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null"> #{id},</if>
+            <if test="stockYear != null"> #{stockYear},</if>
+            <if test="stockMonth != null"> #{stockMonth},</if>
+            <if test="stockCode != null"> #{stockCode},</if>
+            <if test="stockCapacity != null"> #{stockCapacity},</if>
+            <if test="stockSteelId != null"> #{stockSteelId},</if>
+        </trim>
+    </insert>
+
+    <!-- 通过Stock的id将数据库表中对应的数据删除-->
+    <delete id="deleteStockById" parameterType="java.lang.Integer">
+        delete from tb_stock
+        where id = #{id}
+    </delete>
+
+    <!-- 通过Stock的id将Stock的数据更新到数据库中对应的表,包括值null的数据-->
+    <update id="updateStockById" parameterType="com.eu.front.entity.Stock">
+        update tb_stock set
+            stock_year=#{stockYear}
+            ,stock_month=#{stockMonth}
+            ,stock_code=#{stockCode}
+            ,stock_capacity=#{stockCapacity}
+            ,stock_steel_id=#{stockSteelId}
+        where id=#{id}
+    </update>
+
+    <!-- 通过Stock的id将Stock中属性值不为null的数据更新到数据库对应的表中-->
+    <update id="updateNonEmptyStockById" parameterType="com.eu.front.entity.Stock">
+        update tb_stock
+        <set>
+            <if test="stockYear != null">
+                stock_year=#{stockYear},
+            </if>
+            <if test="stockMonth != null">
+                stock_month=#{stockMonth},
+            </if>
+            <if test="stockCode != null">
+                stock_code=#{stockCode},
+            </if>
+            <if test="stockCapacity != null">
+                stock_capacity=#{stockCapacity},
+            </if>
+            <if test="stockSteelId != null">
+                stock_steel_id=#{stockSteelId},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+
+</mapper>

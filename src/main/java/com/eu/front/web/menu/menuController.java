@@ -18,14 +18,14 @@ public class menuController extends HttpServlet {
         return "web/user/user";
     }
     //教室利用率
-    @RequestMapping("/classUserRate")
+    @RequestMapping("/customerce")
     public String classUserRate() {
-        return "UserRate/classUserRate/classUserRate";
+        return "web/customerce/customerce";
     }
     //工作室利用率
-    @RequestMapping("/studioClassFront")
+    @RequestMapping("/steel")
     public String studioClassFront() {
-        return "UserRate/studioClassFront/studioClassFront";
+        return "web/steel/steel";
     }
     //学籍异动
     @RequestMapping("/leaveReason")

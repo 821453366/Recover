@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="db_recover@localhost">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
     <root id="1"/>
     <schema id="2" parent="1" name="db_recover">
       <Current>1</Current>
@@ -25,190 +25,261 @@
     <schema id="19" parent="1" name="web"/>
     <schema id="20" parent="1" name="wxobao"/>
     <table id="21" parent="2" name="tb_admin"/>
-    <table id="22" parent="2" name="tb_bill"/>
-    <table id="23" parent="2" name="tb_company"/>
-    <table id="24" parent="2" name="tb_cooperation"/>
-    <table id="25" parent="2" name="tb_notice"/>
-    <table id="26" parent="2" name="td_price"/>
-    <column id="27" parent="21" name="id">
+    <table id="22" parent="2" name="tb_customer"/>
+    <table id="23" parent="2" name="tb_recovery"/>
+    <table id="24" parent="2" name="tb_sale"/>
+    <table id="25" parent="2" name="tb_steel"/>
+    <table id="26" parent="2" name="tb_stock"/>
+    <table id="27" parent="2" name="tb_storage"/>
+    <column id="28" parent="21" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="28" parent="21" name="admin_name">
+    <column id="29" parent="21" name="admin_name">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="29" parent="21" name="admin_password">
+    <column id="30" parent="21" name="admin_password">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="30" parent="21" name="admin_realname">
+    <column id="31" parent="21" name="admin_realname">
       <Position>4</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="31" parent="21" name="admin_age">
+    <column id="32" parent="21" name="admin_sex">
+      <Position>5</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="33" parent="21" name="admin_age">
       <Position>6</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="32" parent="21" name="admin_img">
+    <column id="34" parent="21" name="admin_rank">
       <Position>7</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="33" parent="21" name="admin_phone">
+    <column id="35" parent="21" name="admin_phone">
       <Position>8</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="34" parent="21" name="admin_date">
+    <column id="36" parent="21" name="admin_date">
       <Position>9</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="35" parent="21" name="admin_sex">
-      <Position>5</Position>
-      <DataType>varchar(20)|0</DataType>
-    </column>
-    <key id="36" parent="21" name="PRIMARY">
+    <key id="37" parent="21" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="37" parent="22" name="id">
+    <column id="38" parent="22" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="38" parent="22" name="bill_ number">
+    <column id="39" parent="22" name="customer_name">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="39" parent="22" name="bill_cooperation_id">
+    <column id="40" parent="22" name="customer_sex">
       <Position>3</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="40" parent="22" name="bill_company_id">
+    <column id="41" parent="22" name="customer_age">
       <Position>4</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="41" parent="22" name="bill_money">
+    <column id="42" parent="22" name="customer_email">
       <Position>5</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="42" parent="22" name="bill_weight">
+    <column id="43" parent="22" name="customer_phone">
       <Position>6</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="44" parent="22" name="customer_company">
+      <Position>7</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <key id="45" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="23" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="47" parent="23" name="recovery_year">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="48" parent="23" name="recovery_month">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="49" parent="23" name="recovery_code">
+      <Position>4</Position>
+      <Comment>代码</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="50" parent="23" name="recovery_steel_id">
+      <Position>5</Position>
+      <Comment>名称</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="51" parent="23" name="recovery_capacity">
+      <Position>6</Position>
+      <Comment>大小</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="52" parent="23" name="recovery_pirce">
+      <Position>7</Position>
+      <Comment>价格</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="53" parent="23" name="recovary_storage_id">
+      <Position>8</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <key id="54" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="55" parent="24" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="56" parent="24" name="sale_year">
+      <Position>2</Position>
+      <Comment>时间</Comment>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="57" parent="24" name="sale_month">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="58" parent="24" name="sale_code">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="59" parent="24" name="sale_steel_id">
+      <Position>5</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="60" parent="24" name="sale_capacity">
+      <Position>6</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="61" parent="24" name="sale_pirce">
+      <Position>7</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="62" parent="24" name="sale_customer_id">
+      <Position>8</Position>
+      <Comment>客户id</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="63" parent="24" name="sale_storage_id">
+      <Position>9</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <key id="64" parent="24" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="65" parent="25" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="66" parent="25" name="steel_version">
+      <Position>2</Position>
+      <Comment>型号</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="67" parent="25" name="steel_name">
+      <Position>3</Position>
+      <Comment>名称</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="68" parent="25" name="steel_price">
+      <Position>4</Position>
+      <Comment>单价</Comment>
       <DataType>double|0</DataType>
     </column>
-    <column id="43" parent="22" name="bill_date">
-      <Position>7</Position>
-      <DataType>date|0</DataType>
-    </column>
-    <column id="44" parent="22" name="bill_user_name">
-      <Position>8</Position>
-      <DataType>varchar(20)|0</DataType>
-    </column>
-    <column id="45" parent="22" name="bill_user_phone">
-      <Position>9</Position>
-      <DataType>varchar(20)|0</DataType>
-    </column>
-    <column id="46" parent="22" name="bill_payee_name">
-      <Position>10</Position>
-      <DataType>varchar(20)|0</DataType>
-    </column>
-    <column id="47" parent="22" name="bill_debt">
-      <Position>11</Position>
-      <DataType>varchar(20)|0</DataType>
-    </column>
-    <column id="48" parent="22" name="bill _check">
-      <Position>12</Position>
-      <DataType>varchar(20)|0</DataType>
-    </column>
-    <key id="49" parent="22" name="PRIMARY">
+    <key id="69" parent="25" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="50" parent="23" name="id">
+    <column id="70" parent="26" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="51" parent="23" name="company_code">
+    <column id="71" parent="26" name="stock_year">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="52" parent="23" name="company_name">
+    <column id="72" parent="26" name="stock_month">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <key id="53" parent="23" name="PRIMARY">
+    <column id="73" parent="26" name="stock_code">
+      <Position>4</Position>
+      <Comment>代码</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="74" parent="26" name="stock_capacity">
+      <Position>5</Position>
+      <Comment>大小</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="75" parent="26" name="stock_steel_id">
+      <Position>6</Position>
+      <Comment>型号</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <key id="76" parent="26" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="54" parent="24" name="id">
+    <column id="77" parent="27" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="55" parent="24" name="cooperation_code">
+    <column id="78" parent="27" name="storage_code">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="56" parent="24" name="cooperation_type">
+    <column id="79" parent="27" name="storage_name">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <key id="57" parent="24" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="58" parent="25" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="59" parent="25" name="notice_title">
-      <Position>2</Position>
-      <DataType>varchar(20)|0</DataType>
-    </column>
-    <column id="60" parent="25" name="notice_content">
-      <Position>3</Position>
-      <DataType>varchar(20)|0</DataType>
-    </column>
-    <column id="61" parent="25" name="notice_user">
+    <column id="80" parent="27" name="storage_capacity">
       <Position>4</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="62" parent="25" name="notice_time">
-      <Position>5</Position>
-      <DataType>date|0</DataType>
-    </column>
-    <key id="63" parent="25" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="64" parent="26" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="65" parent="26" name="price_date">
-      <Position>2</Position>
-      <DataType>varchar(20)|0</DataType>
-    </column>
-    <column id="66" parent="26" name="price_money">
-      <Position>3</Position>
-      <DataType>varchar(20)|0</DataType>
-    </column>
-    <key id="67" parent="26" name="PRIMARY">
+    <key id="81" parent="27" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

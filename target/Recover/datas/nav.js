@@ -4,9 +4,9 @@ var navs = [{
     "href": "menu/tronClass",
     "spread": false
 },{
-    "title": "添加账目",
+    "title": "客户信息",
     "icon": "fa fa-newspaper-o",
-    "href": "menu/professionalDiscipline",
+    "href": "menu/customerce",
     "spread": false
 },{
 	"title": "添加账目",
@@ -30,9 +30,9 @@ var navs = [{
 		"href": "page/index_TronClass.html"
 	}]
 },{
-    "title": "添加账目",
+    "title": "废钢类型",
     "icon": "fa fa-credit-card-alt",
-    "href": "page/index_ouya1.html",
+    "href": "menu/steel",
     "spread": false
 },{
     "title": "添加账目",

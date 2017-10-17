@@ -7,7 +7,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>欧亚决策中心</title>
+	<title>隆兴公司账目管理系统</title>
 
 	<meta name="renderer" content="webkit">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
