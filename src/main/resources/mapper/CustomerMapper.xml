@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eu.front.dao.CustomerDao">
+    <!-- Customer的resultMap,column是给数据库列起的别名,它对应property类的属性-->
+    <resultMap id="result_Customer_Map" type="com.eu.front.entity.Customer">
+        <id column="id" property="id" />
+        <result column="customer_name" property="customerName" />
+        <result column="customer_sex" property="customerSex" />
+        <result column="customer_age" property="customerAge" />
+        <result column="customer_email" property="customerEmail" />
+        <result column="customer_phone" property="customerPhone" />
+        <result column="customer_company" property="customerCompany" />
+    </resultMap>
+
+    <!-- 数据库中表名为:tb_customer的列名,as前是数据库的列明,as后是列的别名用于映射成实体类中的属性,需要注意的是别名必须与resultMap中的column别名一致 -->
+    <sql id="tb_customer_Column">
+        tb_customer.id as id
+        ,tb_customer.customer_name as customer_name
+        ,tb_customer.customer_sex as customer_sex
+        ,tb_customer.customer_age as customer_age
+        ,tb_customer.customer_email as customer_email
+        ,tb_customer.customer_phone as customer_phone
+        ,tb_customer.customer_company as customer_company
+    </sql>
+
+    <!--获得类名为:Customer对应的数据库表的数据总行数 -->
+    <select id="getCustomerRowCount" resultType="java.lang.Long">
+        select count(id) from tb_customer
+    </select>
+    <!-- 获得类名为:Customer对应数据库中表的数据集合 -->
+    <select id="selectCustomer" resultMap="result_Customer_Map">
+        select 
+        <include refid="tb_customer_Column" /> 
+        from tb_customer
+    </select> 
+
+    <!-- 获得一个Customer对象,以参数Customer对象中不为空的属性作为条件进行查询-->
+    <select id="selectCustomerByObj" parameterType="com.eu.front.entity.Customer" resultMap="result_Customer_Map">
+        select 
+            <include refid="tb_customer_Column" /> 
+        from tb_customer
+        <where>
+            <if test="customerCompany != null "> and tb_customer.customer_company = #{customerCompany}</if>
+            <if test="customerPhone != null "> and tb_customer.customer_phone = #{customerPhone}</if>
+            <if test="customerEmail != null "> and tb_customer.customer_email = #{customerEmail}</if>
+            <if test="customerAge != null "> and tb_customer.customer_age = #{customerAge}</if>
+            <if test="customerSex != null "> and tb_customer.customer_sex = #{customerSex}</if>
+            <if test="customerName != null "> and tb_customer.customer_name = #{customerName}</if>
+            <if test="id != null "> and tb_customer.id = #{id}</if>
+        </where>
+    </select> 
+
+    <!-- 通过Customer的id获得对应数据库中表的数据对象-->
+    <select id="selectCustomerById" parameterType="java.lang.Integer" resultMap="result_Customer_Map">
+        select 
+            <include refid="tb_customer_Column" /> 
+        from tb_customer
+        where tb_customer.id = #{id}
+    </select> 
+
+    <!-- 将Customer插入到对应数据库的表中,包括属性值为null的数据-->
+
+    <insert id="insertCustomer" parameterType="com.eu.front.entity.Customer">
+        insert into tb_customer(id,customer_name,customer_sex,customer_age,customer_email,customer_phone,customer_company) 
+        values(#{id},#{customerName},#{customerSex},#{customerAge},#{customerEmail},#{customerPhone},#{customerCompany})
+    </insert>
+
+    <!-- 将Customer中属性值不为null的数据,插入到对应数据库的表中-->
+    <insert id="insertNonEmptyCustomer" parameterType="com.eu.front.entity.Customer">
+        insert into tb_customer
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="customerName != null">customer_name,</if>
+            <if test="customerSex != null">customer_sex,</if>
+            <if test="customerAge != null">customer_age,</if>
+            <if test="customerEmail != null">customer_email,</if>
+            <if test="customerPhone != null">customer_phone,</if>
+            <if test="customerCompany != null">customer_company,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null"> #{id},</if>
+            <if test="customerName != null"> #{customerName},</if>
+            <if test="customerSex != null"> #{customerSex},</if>
+            <if test="customerAge != null"> #{customerAge},</if>
+            <if test="customerEmail != null"> #{customerEmail},</if>
+            <if test="customerPhone != null"> #{customerPhone},</if>
+            <if test="customerCompany != null"> #{customerCompany},</if>
+        </trim>
+    </insert>
+
+    <!-- 通过Customer的id将数据库表中对应的数据删除-->
+    <delete id="deleteCustomerById" parameterType="java.lang.Integer">
+        delete from tb_customer
+        where id = #{id}
+    </delete>
+
+    <!-- 通过Customer的id将Customer的数据更新到数据库中对应的表,包括值null的数据-->
+    <update id="updateCustomerById" parameterType="com.eu.front.entity.Customer">
+        update tb_customer set
+            customer_name=#{customerName}
+            ,customer_sex=#{customerSex}
+            ,customer_age=#{customerAge}
+            ,customer_email=#{customerEmail}
+            ,customer_phone=#{customerPhone}
+            ,customer_company=#{customerCompany}
+        where id=#{id}
+    </update>
+
+    <!-- 通过Customer的id将Customer中属性值不为null的数据更新到数据库对应的表中-->
+    <update id="updateNonEmptyCustomerById" parameterType="com.eu.front.entity.Customer">
+        update tb_customer
+        <set>
+            <if test="customerName != null">
+                customer_name=#{customerName},
+            </if>
+            <if test="customerSex != null">
+                customer_sex=#{customerSex},
+            </if>
+            <if test="customerAge != null">
+                customer_age=#{customerAge},
+            </if>
+            <if test="customerEmail != null">
+                customer_email=#{customerEmail},
+            </if>
+            <if test="customerPhone != null">
+                customer_phone=#{customerPhone},
+            </if>
+            <if test="customerCompany != null">
+                customer_company=#{customerCompany},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+
+</mapper>
