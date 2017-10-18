@@ -4,6 +4,9 @@
     <select id="queryCustomer" resultType="map">
         SELECT * FROM tb_customer where customer_name like #{customerName} order by id DESC  LIMIT #{start}, #{end}
     </select>
+    <select id="queryCustomerceInfo" resultType="map">
+        SELECT * FROM tb_customer  order by id DESC
+    </select>
     <select id="queryCustomerCount" resultType="long">
         SELECT count(1)
         FROM tb_customer

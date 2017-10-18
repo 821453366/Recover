@@ -3,58 +3,38 @@ package com.eu.front.service.impl;
 import com.eu.front.dao.SaleDao;
 import com.eu.front.entity.Sale;
 import com.eu.front.service.SaleService;
+import com.eu.front.utils.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class SaleServiceImpl implements SaleService {
     @Autowired
     private SaleDao saleDao;
+
     @Override
-    public long getSaleRowCount(){
-        return saleDao.getSaleRowCount();
-    }
-    @Override
-    public List<Sale> selectSale(){
-        return saleDao.selectSale();
-    }
-    @Override
-    public Sale selectSaleByObj(Sale obj){
-        return saleDao.selectSaleByObj(obj);
-    }
-    @Override
-    public Sale selectSaleById(Integer id){
-        return saleDao.selectSaleById(id);
-    }
-    @Override
-    public int insertSale(Sale value){
-        return saleDao.insertSale(value);
-    }
-    @Override
-    public int insertNonEmptySale(Sale value){
-        return saleDao.insertNonEmptySale(value);
-    }
-    @Override
-    public int deleteSaleById(Integer id){
-        return saleDao.deleteSaleById(id);
-    }
-    @Override
-    public int updateSaleById(Sale enti){
-        return saleDao.updateSaleById(enti);
-    }
-    @Override
-    public int updateNonEmptySaleById(Sale enti){
-        return saleDao.updateNonEmptySaleById(enti);
+    public List<Map<String, String>> querySale(PageUtil page, String userName) throws Exception {
+        String saleCode="%"+userName+"%";
+        Map<String, Object> data = new HashMap<String, Object>();
+        data.put("start", (page.getCurrentIndex() - 1) * page.getPageSize());
+        data.put("end", page.getPageSize());
+        data.put("saleCode",saleCode);
+        page.setTotalSize(saleDao.querySaleCount());
+
+        return saleDao.querySale(data);
     }
 
-    public SaleDao getSaleDao() {
-        return this.saleDao;
+    @Override
+    public void addSale(Sale sale) throws Exception {
+        saleDao.addSale(sale);
     }
 
-    public void setSaleDao(SaleDao saleDao) {
-        this.saleDao = saleDao;
+    @Override
+    public void deleteSale(String id) throws Exception {
+        saleDao.deleteSale(id);
     }
-
 }

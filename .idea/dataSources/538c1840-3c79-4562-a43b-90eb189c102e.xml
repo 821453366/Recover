@@ -164,7 +164,7 @@
     <column id="56" parent="24" name="sale_year">
       <Position>2</Position>
       <Comment>时间</Comment>
-      <DataType>date|0</DataType>
+      <DataType>varchar(20)|0</DataType>
     </column>
     <column id="57" parent="24" name="sale_month">
       <Position>3</Position>
@@ -253,33 +253,38 @@
     </column>
     <column id="75" parent="26" name="stock_steel_id">
       <Position>6</Position>
-      <Comment>型号</Comment>
+      <Comment>钢铁类型</Comment>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <key id="76" parent="26" name="PRIMARY">
+    <column id="76" parent="26" name="stock_storage_id">
+      <Position>7</Position>
+      <Comment>库房编号</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <key id="77" parent="26" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="77" parent="27" name="id">
+    <column id="78" parent="27" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="78" parent="27" name="storage_code">
+    <column id="79" parent="27" name="storage_code">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="79" parent="27" name="storage_name">
+    <column id="80" parent="27" name="storage_name">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="80" parent="27" name="storage_capacity">
+    <column id="81" parent="27" name="storage_capacity">
       <Position>4</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <key id="81" parent="27" name="PRIMARY">
+    <key id="82" parent="27" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

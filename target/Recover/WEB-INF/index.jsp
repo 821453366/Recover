@@ -186,12 +186,12 @@
 			<ul class="layui-tab-title">
 				<li class="layui-this">
 					<i class="fa fa-bank" aria-hidden="true"></i>
-					<cite>系统公告</cite>
+					<cite>欢迎使用</cite>
 				</li>
 			</ul>
 			<div class="layui-tab-content" style="min-height: 150px; padding: 5px 0 0 0;">
 				<div class="layui-tab-item layui-show">
-					<iframe src="${baseurl}/page/main.html"></iframe>
+					<iframe src="${baseurl}/page/main.jsp"></iframe>
 				</div>
 			</div>
 		</div>

@@ -24,5 +24,8 @@ public interface CustomerDao{
 	 * @param id
 	 */
 	void deleteCustomer(String id) throws Exception;
-
+	/**
+	 * 查询数据
+	 */
+	List<Map<String, String>> queryCustomerceInfo() throws Exception;
 }

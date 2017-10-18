@@ -15,4 +15,7 @@
         INSERT INTO tb_steel(steel_version,steel_name,steel_price)
         VALUES (#{steelVersion},#{steelName},#{steelPrice})
     </update>
+    <select id="querySteelInfo" resultType="map">
+        SELECT * FROM tb_steel  order by id DESC
+    </select>
 </mapper>

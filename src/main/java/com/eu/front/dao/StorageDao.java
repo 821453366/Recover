@@ -26,4 +26,10 @@ public interface StorageDao{
 	 */
 	void deleteStorage(String id) throws Exception;
 
+
+	/**
+	 * 查询数据
+	 */
+	List<Map<String, String>> queryStorageInfo() throws Exception;
+
 }

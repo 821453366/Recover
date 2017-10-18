@@ -1,153 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.eu.front.dao.SaleDao">
-    <!-- Sale的resultMap,column是给数据库列起的别名,它对应property类的属性-->
-    <resultMap id="result_Sale_Map" type="com.eu.front.entity.Sale">
-        <id column="id" property="id" />
-        <result column="sale_year" property="saleYear" />
-        <result column="sale_month" property="saleMonth" />
-        <result column="sale_code" property="saleCode" />
-        <result column="sale_steel_id" property="saleSteelId" />
-        <result column="sale_capacity" property="saleCapacity" />
-        <result column="sale_pirce" property="salePirce" />
-        <result column="sale_customer_id" property="saleCustomerId" />
-        <result column="sale_storage_id" property="saleStorageId" />
-    </resultMap>
-
-    <!-- 数据库中表名为:tb_sale的列名,as前是数据库的列明,as后是列的别名用于映射成实体类中的属性,需要注意的是别名必须与resultMap中的column别名一致 -->
-    <sql id="tb_sale_Column">
-        tb_sale.id as id
-        ,tb_sale.sale_year as sale_year
-        ,tb_sale.sale_month as sale_month
-        ,tb_sale.sale_code as sale_code
-        ,tb_sale.sale_steel_id as sale_steel_id
-        ,tb_sale.sale_capacity as sale_capacity
-        ,tb_sale.sale_pirce as sale_pirce
-        ,tb_sale.sale_customer_id as sale_customer_id
-        ,tb_sale.sale_storage_id as sale_storage_id
-    </sql>
-
-    <!--获得类名为:Sale对应的数据库表的数据总行数 -->
-    <select id="getSaleRowCount" resultType="java.lang.Long">
-        select count(id) from tb_sale
+    <select id="querySale" resultType="map">
+        SELECT * FROM tb_sale where sale_code like #{saleCode} order by id DESC  LIMIT #{start}, #{end}
     </select>
-    <!-- 获得类名为:Sale对应数据库中表的数据集合 -->
-    <select id="selectSale" resultMap="result_Sale_Map">
-        select 
-        <include refid="tb_sale_Column" /> 
-        from tb_sale
-    </select> 
 
-    <!-- 获得一个Sale对象,以参数Sale对象中不为空的属性作为条件进行查询-->
-    <select id="selectSaleByObj" parameterType="com.eu.front.entity.Sale" resultMap="result_Sale_Map">
-        select 
-            <include refid="tb_sale_Column" /> 
-        from tb_sale
-        <where>
-            <if test="saleStorageId != null "> and tb_sale.sale_storage_id = #{saleStorageId}</if>
-            <if test="saleCustomerId != null "> and tb_sale.sale_customer_id = #{saleCustomerId}</if>
-            <if test="salePirce != null "> and tb_sale.sale_pirce = #{salePirce}</if>
-            <if test="saleCapacity != null "> and tb_sale.sale_capacity = #{saleCapacity}</if>
-            <if test="saleSteelId != null "> and tb_sale.sale_steel_id = #{saleSteelId}</if>
-            <if test="saleCode != null "> and tb_sale.sale_code = #{saleCode}</if>
-            <if test="saleMonth != null "> and tb_sale.sale_month = #{saleMonth}</if>
-            <if test="saleYear != null "> and tb_sale.sale_year = #{saleYear}</if>
-            <if test="id != null "> and tb_sale.id = #{id}</if>
-        </where>
-    </select> 
-
-    <!-- 通过Sale的id获得对应数据库中表的数据对象-->
-    <select id="selectSaleById" parameterType="java.lang.Integer" resultMap="result_Sale_Map">
-        select 
-            <include refid="tb_sale_Column" /> 
-        from tb_sale
-        where tb_sale.id = #{id}
-    </select> 
-
-    <!-- 将Sale插入到对应数据库的表中,包括属性值为null的数据-->
-
-    <insert id="insertSale" parameterType="com.eu.front.entity.Sale">
-        insert into tb_sale(id,sale_year,sale_month,sale_code,sale_steel_id,sale_capacity,sale_pirce,sale_customer_id,sale_storage_id) 
-        values(#{id},#{saleYear},#{saleMonth},#{saleCode},#{saleSteelId},#{saleCapacity},#{salePirce},#{saleCustomerId},#{saleStorageId})
-    </insert>
-
-    <!-- 将Sale中属性值不为null的数据,插入到对应数据库的表中-->
-    <insert id="insertNonEmptySale" parameterType="com.eu.front.entity.Sale">
-        insert into tb_sale
-        <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="id != null">id,</if>
-            <if test="saleYear != null">sale_year,</if>
-            <if test="saleMonth != null">sale_month,</if>
-            <if test="saleCode != null">sale_code,</if>
-            <if test="saleSteelId != null">sale_steel_id,</if>
-            <if test="saleCapacity != null">sale_capacity,</if>
-            <if test="salePirce != null">sale_pirce,</if>
-            <if test="saleCustomerId != null">sale_customer_id,</if>
-            <if test="saleStorageId != null">sale_storage_id,</if>
-        </trim>
-        <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="id != null"> #{id},</if>
-            <if test="saleYear != null"> #{saleYear},</if>
-            <if test="saleMonth != null"> #{saleMonth},</if>
-            <if test="saleCode != null"> #{saleCode},</if>
-            <if test="saleSteelId != null"> #{saleSteelId},</if>
-            <if test="saleCapacity != null"> #{saleCapacity},</if>
-            <if test="salePirce != null"> #{salePirce},</if>
-            <if test="saleCustomerId != null"> #{saleCustomerId},</if>
-            <if test="saleStorageId != null"> #{saleStorageId},</if>
-        </trim>
-    </insert>
-
-    <!-- 通过Sale的id将数据库表中对应的数据删除-->
-    <delete id="deleteSaleById" parameterType="java.lang.Integer">
-        delete from tb_sale
-        where id = #{id}
+    <select id="querySaleCount" resultType="long">
+        SELECT count(1)
+        FROM tb_sale
+    </select>
+    <update id="addSale" parameterType="Sale">
+        INSERT INTO tb_sale(recovery_year,recovery_month,recovery_code,recovery_steel_id,recovery_capacity,recovery_pirce,recovary_storage_id)
+        VALUES (#{recoveryYear},#{recoveryMonth},#{recoveryCode},#{recoverySteelId},#{recoveryCapacity},#{recoveryPirce},#{recovaryStorageId})
+    </update>
+    <delete id="deleteSale" parameterType="string">
+        delete  from tb_sale where id =#{id}
     </delete>
-
-    <!-- 通过Sale的id将Sale的数据更新到数据库中对应的表,包括值null的数据-->
-    <update id="updateSaleById" parameterType="com.eu.front.entity.Sale">
-        update tb_sale set
-            sale_year=#{saleYear}
-            ,sale_month=#{saleMonth}
-            ,sale_code=#{saleCode}
-            ,sale_steel_id=#{saleSteelId}
-            ,sale_capacity=#{saleCapacity}
-            ,sale_pirce=#{salePirce}
-            ,sale_customer_id=#{saleCustomerId}
-            ,sale_storage_id=#{saleStorageId}
-        where id=#{id}
-    </update>
-
-    <!-- 通过Sale的id将Sale中属性值不为null的数据更新到数据库对应的表中-->
-    <update id="updateNonEmptySaleById" parameterType="com.eu.front.entity.Sale">
-        update tb_sale
-        <set>
-            <if test="saleYear != null">
-                sale_year=#{saleYear},
-            </if>
-            <if test="saleMonth != null">
-                sale_month=#{saleMonth},
-            </if>
-            <if test="saleCode != null">
-                sale_code=#{saleCode},
-            </if>
-            <if test="saleSteelId != null">
-                sale_steel_id=#{saleSteelId},
-            </if>
-            <if test="saleCapacity != null">
-                sale_capacity=#{saleCapacity},
-            </if>
-            <if test="salePirce != null">
-                sale_pirce=#{salePirce},
-            </if>
-            <if test="saleCustomerId != null">
-                sale_customer_id=#{saleCustomerId},
-            </if>
-            <if test="saleStorageId != null">
-                sale_storage_id=#{saleStorageId},
-            </if>
-        </set>
-        where id=#{id}
-    </update>
+    <select id="findById" parameterType="int" resultType="Sale">
+        SELECT * from tb_sale where id=#{id}
+    </select>
+    <!--<update id="updateSaleInfo" parameterType="Sale">-->
+    <!--UPDATE tb_sale-->
+    <!--SET tb_sale.admin_realname = #{adminRealname},tb_sale.admin_sex=#{adminSex},-->
+    <!--tb_sale.admin_age=#{adminAge},tb_sale.admin_phone=#{adminPhone}-->
+    <!--WHERE tb_sale.admin_name = #{adminName}-->
+    <!--</update>-->
 
 </mapper>

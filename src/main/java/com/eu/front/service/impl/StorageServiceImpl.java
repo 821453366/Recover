@@ -27,6 +27,11 @@ public class StorageServiceImpl implements StorageService {
 
         return storageDao.queryStorage(data);
     }
+    @Override
+    public List<Map<String, String>> queryStorageInfo() throws Exception {
+
+        return storageDao.queryStorageInfo();
+    }
 
     @Override
     public void addStorage(Storage customer) throws Exception {

@@ -39,4 +39,9 @@ public class CustomerServiceImpl implements CustomerService {
         customerDao.deleteCustomer(id);
     }
 
+    @Override
+    public List<Map<String, String>> queryCustomerceInfo() throws Exception {
+       return customerDao.queryCustomerceInfo();
+    }
+
 }

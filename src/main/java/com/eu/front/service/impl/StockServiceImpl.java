@@ -1,60 +1,29 @@
 package com.eu.front.service.impl;
 
 import com.eu.front.dao.StockDao;
-import com.eu.front.entity.Stock;
 import com.eu.front.service.StockService;
+import com.eu.front.utils.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class StockServiceImpl implements StockService {
     @Autowired
     private StockDao stockDao;
-    @Override
-    public long getStockRowCount(){
-        return stockDao.getStockRowCount();
-    }
-    @Override
-    public List<Stock> selectStock(){
-        return stockDao.selectStock();
-    }
-    @Override
-    public Stock selectStockByObj(Stock obj){
-        return stockDao.selectStockByObj(obj);
-    }
-    @Override
-    public Stock selectStockById(Integer id){
-        return stockDao.selectStockById(id);
-    }
-    @Override
-    public int insertStock(Stock value){
-        return stockDao.insertStock(value);
-    }
-    @Override
-    public int insertNonEmptyStock(Stock value){
-        return stockDao.insertNonEmptyStock(value);
-    }
-    @Override
-    public int deleteStockById(Integer id){
-        return stockDao.deleteStockById(id);
-    }
-    @Override
-    public int updateStockById(Stock enti){
-        return stockDao.updateStockById(enti);
-    }
-    @Override
-    public int updateNonEmptyStockById(Stock enti){
-        return stockDao.updateNonEmptyStockById(enti);
-    }
 
-    public StockDao getStockDao() {
-        return this.stockDao;
-    }
+    @Override
+    public List<Map<String, String>> queryStock(PageUtil page, String userName) throws Exception {
+        String stockCode="%"+userName+"%";
+        Map<String, Object> data = new HashMap<String, Object>();
+        data.put("start", (page.getCurrentIndex() - 1) * page.getPageSize());
+        data.put("end", page.getPageSize());
+        data.put("stockCode",stockCode);
+        page.setTotalSize(stockDao.queryStockCount());
 
-    public void setStockDao(StockDao stockDao) {
-        this.stockDao = stockDao;
+        return stockDao.queryStock( data);
     }
-
 }

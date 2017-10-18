@@ -15,13 +15,14 @@ import java.util.Map;
 public class SteelServiceImpl implements SteelService {
     @Autowired
     private SteelDao steelDao;
+
     @Override
     public List<Map<String, String>> querySteel(PageUtil page, String userName) throws Exception {
-        String adminReal="%"+userName+"%";
+        String adminReal = "%" + userName + "%";
         Map<String, Object> data = new HashMap<String, Object>();
         data.put("start", (page.getCurrentIndex() - 1) * page.getPageSize());
         data.put("end", page.getPageSize());
-        data.put("steelName",adminReal);
+        data.put("steelName", adminReal);
         page.setTotalSize(steelDao.querySteelCount());
 
         return steelDao.querySteel(data);
@@ -37,4 +38,8 @@ public class SteelServiceImpl implements SteelService {
         steelDao.deleteSteel(id);
     }
 
+    @Override
+    public  List<Map<String, String>> querySteelInfo() throws Exception {
+       return steelDao.querySteelInfo();
+    }
 }

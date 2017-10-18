@@ -4,6 +4,9 @@
     <select id="queryStorage" resultType="map">
         SELECT * FROM tb_storage where storage_name like #{storageName} order by id DESC  LIMIT #{start}, #{end}
     </select>
+    <select id="queryStorageInfo" resultType="map">
+        SELECT * FROM tb_storage  order by id DESC
+    </select>
     <select id="queryStorageCount" resultType="long">
         SELECT count(1)
         FROM tb_storage

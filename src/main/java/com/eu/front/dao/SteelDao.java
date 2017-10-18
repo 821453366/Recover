@@ -24,4 +24,8 @@ public interface SteelDao{
 	 * @param id
 	 */
 	void deleteSteel(String id) throws Exception;
+	/**
+	 * 查询数据
+	 */
+	List<Map<String, String>> querySteelInfo() throws Exception;
 }

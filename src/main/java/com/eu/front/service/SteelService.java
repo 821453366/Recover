@@ -26,4 +26,9 @@ public interface SteelService{
 	 */
 	void deleteSteel(String id) throws Exception;
 
+	/**
+	 * 查询数据
+	 */
+	List<Map<String, String>> querySteelInfo() throws Exception;
+
 }

@@ -33,13 +33,13 @@ public class menuController extends HttpServlet {
         return "web/storage/storage";
     }
     //
-    @RequestMapping("/superUserInfo")
+    @RequestMapping("/stock")
     public String superUserInfo() {
-        return "userInfo/superUserInfo";
+        return "web/stock/stock";
     }
-    @RequestMapping("/firstUserInfo")
+    @RequestMapping("/Sale")
     public String firstUserInfo() {
-        return "userInfo/firstUserInfo";
+        return "web/sale/sale";
     }
     @RequestMapping("/secondUserInfo")
     public String secondUserInfo() {
