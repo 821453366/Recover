@@ -1,7 +1,7 @@
 var navs = [{
     "title": "用户信息",
     "icon": "fa fa-bar-chart-o",
-    "href": "menu/tronClass",
+    "href": "menu/user",
     "spread": false
 },{
     "title": "客户信息",
@@ -35,9 +35,9 @@ var navs = [{
     "href": "menu/steel",
     "spread": false
 },{
-    "title": "添加账目",
+    "title": "库房类型",
     "icon": "fa fa-area-chart",
-    "href": "page/courseTraffic.html",
+    "href": "menu/storage",
     "spread": false
 },{
     "title": "添加账目",

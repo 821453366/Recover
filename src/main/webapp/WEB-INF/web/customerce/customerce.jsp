@@ -197,7 +197,7 @@
             addUser: function () {
                 layer.open({
                     type: 1,
-                    title: '添加用户'
+                    title: '添加客户'
                     , content: $("#addUser"),
                     area: ['40%', '70%']
                 });

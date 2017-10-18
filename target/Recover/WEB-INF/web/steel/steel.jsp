@@ -28,8 +28,8 @@
     <blockquote class="layui-elem-quote">
         <div class="layui-inline">
             <div class="layui-input-inline">
-                <input type="text" name="title" id="customerName" lay-verify="title" autocomplete="off"
-                       placeholder="客户姓名" class="layui-input">
+                <input type="text" name="title" id="steelName" lay-verify="title" autocomplete="off"
+                       placeholder="废钢名称" class="layui-input">
             </div>
             <a class="layui-btn" onclick="cl.list()"><i class="layui-icon">&#xe615;</i>搜索</a>
 
@@ -40,7 +40,7 @@
     </blockquote>
 
     <fieldset class="layui-elem-field">
-        <legend>客户信息</legend>
+        <legend>废钢信息</legend>
         <div style="margin: 20px;">
             <table class="site-table layui-table table-hover ">
                 <thead>
@@ -86,7 +86,7 @@
             <div class="layui-inline">
                 <label class="layui-form-label" style="width: 130px;">废钢类型编号：</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="customerName" autocomplete="off" class="layui-input" placeholder="废钢类型编号">
+                    <input type="text" name="steelVersion" autocomplete="off" class="layui-input" placeholder="废钢类型编号">
                 </div>
             </div>
         </div>
@@ -94,7 +94,7 @@
             <div class="layui-inline">
                 <label class="layui-form-label" style="width: 130px;">废钢名称：</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="customerAge" autocomplete="off" class="layui-input" placeholder="废钢名称">
+                    <input type="text" name="steelName" autocomplete="off" class="layui-input" placeholder="废钢名称">
                 </div>
             </div>
         </div>
@@ -102,7 +102,7 @@
             <div class="layui-inline">
                 <label class="layui-form-label" style="width: 130px;">废钢价格(元/吨)：</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="customerPhone" autocomplete="off" class="layui-input"
+                    <input type="text" name="steelPrice" autocomplete="off" class="layui-input"
                            placeholder="废钢价格(元/吨)">
                 </div>
             </div>
@@ -143,7 +143,7 @@
                 });
             },
             list: function () {
-                let userName = $("#customerName").val();
+                let userName = $("#steelName").val();
                 $.post("${pageContext.request.contextPath}/Steel/findSteel", {
                         currentIndex: currentIndex,
                         pageSize: pageSize,
@@ -166,14 +166,14 @@
             addUser: function () {
                 layer.open({
                     type: 1,
-                    title: '添加用户'
+                    title: '添加废钢'
                     , content: $("#addUser"),
                     area: ['40%', '70%']
                 });
             },
             addUserAjax: function () {
-                let admin = $("#update-form").serialize();
-                $.post("${pageContext.request.contextPath}/Steel/addSteel", admin, function (data) {
+                let steel = $("#update-form").serialize();
+                $.post("${pageContext.request.contextPath}/Steel/addSteel", steel, function (data) {
                     layer.msg(data.msg, {time: 500});
                     if (data.result) {
                         setTimeout("location.reload()", 1000);

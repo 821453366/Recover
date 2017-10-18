@@ -20,6 +20,7 @@
     .layui-table td, .layui-table th {
         text-align: center;
     }
+
 </style>
 <script type="text/javascript" src="${baseurl}/public/common/layui/layui.js"></script>
 <body>
@@ -27,30 +28,27 @@
     <blockquote class="layui-elem-quote">
         <div class="layui-inline">
             <div class="layui-input-inline">
-                <input type="text" name="title" id="customerName" lay-verify="title" autocomplete="off"
-                       placeholder="客户姓名" class="layui-input">
+                <input type="text" name="title" id="storageName" lay-verify="title" autocomplete="off"
+                       placeholder="库房名称" class="layui-input">
             </div>
             <a class="layui-btn" onclick="cl.list()"><i class="layui-icon">&#xe615;</i>搜索</a>
 
         </div>
-        <a class="refer layui-btn " onclick="cl.addUser()">
+        <a class="refer layui-btn " onclick="cl.addStorage()">
             <i class="layui-icon">&#xe61f;</i>添加
         </a>
     </blockquote>
 
     <fieldset class="layui-elem-field">
-        <legend>客户信息</legend>
+        <legend>库房信息</legend>
         <div style="margin: 20px;">
             <table class="site-table layui-table table-hover ">
                 <thead>
                 <tr>
                     <th>编号</th>
-                    <th>姓名</th>
-                    <th>性别</th>
-                    <th>年龄</th>
-                    <th>手机号</th>
-                    <th>电子邮件</th>
-                    <th>所在公司</th>
+                    <th>库房编号</th>
+                    <th>库房名称</th>
+                    <th>库房所存废钢重量(/吨)</th>
                     <th>操作</th>
                 </tr>
                 </thead>
@@ -67,12 +65,9 @@
     {{# layui.each(d.info, function(index, item){ }}
     <tr>
         <td>{{ index+1}}</td>
-        <td>{{item.customer_name  == undefined ? "暂无" : item.customer_name}}</td>
-        <th>{{item.customer_sex == undefined ? "暂无" : item.customer_sex}}</th>
-        <th>{{item.customer_age == undefined ? "暂无" : item.customer_age}}</th>
-        <th>{{item.customer_phone == undefined ? "暂无" : item.customer_phone}}</th>
-        <th>{{item.customer_email == undefined ? "暂无" : item.customer_email}}</th>
-        <th>{{item.customer_company == undefined ? "暂无" : item.customer_company}}</th>
+        <td>{{item.storage_code  == undefined ? "暂无" : item.storage_code}}</td>
+        <th>{{item.storage_name == undefined ? "暂无" : item.storage_name}}</th>
+        <th>{{item.storage_capacity == undefined ? "暂无" : item.storage_capacity}}</th>
         <td>
             <button data-id='1' data-opt='del' class='layui-btn layui-btn-danger layui-btn-small layui-icon'
                     onclick="cl.delete('{{item.id}}')">
@@ -84,62 +79,36 @@
 </script>
 
 </body>
-<div id="addUser" style="display: none">
+<div id="addStorage" style="display: none">
     <form class="layui-form layui-form-pane" id="update-form" style="padding-left: 25%;padding-top: 10%;">
 
         <div class="layui-form-item">
             <div class="layui-inline">
-                <label class="layui-form-label">客户姓名：</label>
+                <label class="layui-form-label" style="width: 130px;">库房编号：</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="customerName" autocomplete="off" class="layui-input" placeholder="客户姓名">
+                    <input type="text" name="storageCode" autocomplete="off" class="layui-input" placeholder="废钢类型编号">
                 </div>
             </div>
         </div>
         <div class="layui-form-item">
             <div class="layui-inline">
-                <label class="layui-form-label">年龄：</label>
+                <label class="layui-form-label" style="width: 130px;">库房名称：</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="customerAge" autocomplete="off" class="layui-input" placeholder="年龄">
-                </div>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">性别：</label>
-            <div class="layui-input-block">
-                <input type="radio" name="customerSex" value="男" title="男" checked>
-                <input type="radio" name="customerSex" value="女" title="女">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">手机号：</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="customerPhone" autocomplete="off" class="layui-input"
-                           placeholder="手机号">
+                    <input type="text" name="storageName" autocomplete="off" class="layui-input" placeholder="库房名称">
                 </div>
             </div>
         </div>
         <div class="layui-form-item">
             <div class="layui-inline">
-                <label class="layui-form-label">电子邮件：</label>
+                <label class="layui-form-label" style="width: 130px;">库房所存废钢重量(/吨)：</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="customerEmail" autocomplete="off" class="layui-input"
-                           placeholder="电子邮件">
+                    <input type="text" name="storageCapacity" autocomplete="off" class="layui-input"
+                           placeholder="库房所存废钢重量(/吨)">
                 </div>
             </div>
         </div>
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">所在公司：</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="customerCompany" autocomplete="off" class="layui-input"
-                           placeholder="所在公司">
-                </div>
-            </div>
-        </div>
-
         <div class="layui-input-block">
-            <button class="layui-btn" onclick="cl.addUserAjax()">立即提交</button>
+            <button class="layui-btn" onclick="cl.addStorageAjax()">立即提交</button>
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
         </div>
 
@@ -174,8 +143,8 @@
                 });
             },
             list: function () {
-                let userName = $("#customerName").val();
-                $.post("${pageContext.request.contextPath}/Customerce/findCustomerce", {
+                let userName = $("#storageName").val();
+                $.post("${pageContext.request.contextPath}/Storage/findStorage", {
                         currentIndex: currentIndex,
                         pageSize: pageSize,
                         userName:userName
@@ -194,17 +163,17 @@
                     "json"
                 );
             },
-            addUser: function () {
+            addStorage: function () {
                 layer.open({
                     type: 1,
-                    title: '添加客户'
-                    , content: $("#addUser"),
+                    title: '添加库房'
+                    , content: $("#addStorage"),
                     area: ['40%', '70%']
                 });
             },
-            addUserAjax: function () {
-                let admin = $("#update-form").serialize();
-                $.post("${pageContext.request.contextPath}/Customerce/addCustomerce", admin, function (data) {
+            addStorageAjax: function () {
+                let storage = $("#update-form").serialize();
+                $.post("${pageContext.request.contextPath}/Storage/addStorage", storage, function (data) {
                     layer.msg(data.msg, {time: 500});
                     if (data.result) {
                         setTimeout("location.reload()", 1000);
@@ -214,7 +183,7 @@
             delete:function (id) {
                 layer.confirm('确定删除？', {icon: 3, title: '提示'}, function (index) {
                     layer.close(index);
-                    $.post("${pageContext.request.contextPath}/Customerce/deleteCustomerce", {id: id},
+                    $.post("${pageContext.request.contextPath}/Storage/deleteStorage", {id: id},
                         function (data) {
                             layer.msg(data.msg, {time: 500});
                             if (data.result) {

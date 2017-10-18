@@ -11,4 +11,8 @@
     <delete id="deleteStorage" parameterType="string">
         delete  from tb_storage where id =#{id}
     </delete>
+    <update id="addStorage" parameterType="Storage">
+        INSERT INTO tb_storage(storage_code,storage_name,storage_capacity)
+        VALUES (#{storageCode},#{storageName},#{storageCapacity})
+    </update>
 </mapper>
