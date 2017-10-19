@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.eu.front.dao.StorageDao">
+    <select id="queryStorageById" resultType="Storage">
+        SELECT * FROM tb_storage where id = #{id}
+    </select>
     <select id="queryStorage" resultType="map">
         SELECT * FROM tb_storage where storage_name like #{storageName} order by id DESC  LIMIT #{start}, #{end}
     </select>

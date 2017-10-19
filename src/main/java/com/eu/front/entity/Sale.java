@@ -1,7 +1,7 @@
 package com.eu.front.entity;
 public class Sale {
     private Integer id;
-    private java.util.Date saleYear;//时间
+    private String saleYear;//时间
     private String saleMonth;
     private String saleCode;
     private String saleSteelId;
@@ -12,18 +12,15 @@ public class Sale {
     public Sale() {
         super();
     }
-    public Sale(Integer id,java.util.Date saleYear,String saleMonth,String saleCode,String saleSteelId,String saleCapacity,String salePirce,String saleCustomerId,String saleStorageId) {
-        super();
-        this.id = id;
-        this.saleYear = saleYear;
-        this.saleMonth = saleMonth;
-        this.saleCode = saleCode;
-        this.saleSteelId = saleSteelId;
-        this.saleCapacity = saleCapacity;
-        this.salePirce = salePirce;
-        this.saleCustomerId = saleCustomerId;
-        this.saleStorageId = saleStorageId;
+
+    public String getSaleYear() {
+        return saleYear;
     }
+
+    public void setSaleYear(String saleYear) {
+        this.saleYear = saleYear;
+    }
+
     public Integer getId() {
         return this.id;
     }
@@ -32,13 +29,6 @@ public class Sale {
         this.id = id;
     }
 
-    public java.util.Date getSaleYear() {
-        return this.saleYear;
-    }
-
-    public void setSaleYear(java.util.Date saleYear) {
-        this.saleYear = saleYear;
-    }
 
     public String getSaleMonth() {
         return this.saleMonth;

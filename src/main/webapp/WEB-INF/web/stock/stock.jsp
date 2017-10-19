@@ -24,7 +24,7 @@
 <script type="text/javascript" src="${baseurl}/public/common/layui/layui.js"></script>
 <body>
 <div class="admin-main">
-    <blockquote class="layui-elem-quote">
+    <blockquote class="layui-elem-quote" style="display: none">
         <div class="layui-inline">
             <div class="layui-input-inline">
                 <input type="text" name="title" id="stockName" lay-verify="title" autocomplete="off"
@@ -42,10 +42,7 @@
                 <thead>
                 <tr>
                     <th>编号</th>
-                    <th>年份</th>
-                    <th>月份</th>
                     <th>库存编号</th>
-                    <th>废钢类型</th>
                     <th>库房名称</th>
                     <th>废钢重量（单位：吨）</th>
                 </tr>
@@ -63,11 +60,8 @@
     {{# layui.each(d.info, function(index, item){ }}
     <tr>
         <td>{{ index+1}}</td>
-        <td>{{item.stock_year  == undefined ? "暂无" : item.stock_year}}</td>
-        <th>{{item.stock_month == undefined ? "暂无" : item.stock_month}}</th>
         <th>{{item.stock_code == undefined ? "暂无" : 'KC00'+item.id}}</th>
-        <th>{{item.stock_steel_id == undefined ? "暂无" : item.stock_steel_id}}</th>
-        <th>{{item.stock_storage_id == undefined ? "暂无" : item.stock_storage_id}}</th>
+        <th>{{item.storage_name == undefined ? "暂无" : item.storage_name}}</th>
         <th>{{item.stock_capacity == undefined ? "暂无" : item.stock_capacity}}</th>
     </tr>
     {{# }); }}
@@ -110,6 +104,7 @@
                         userName:userName
                     },
                     function (data) {
+                    console.log(data)
                         if (data.result) {
                             currentIndex = data.page.currentIndex;
                             totalSize = data.page.totalSize;

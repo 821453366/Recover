@@ -62,6 +62,12 @@
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
         <item name="db_recover@localhost" type="e3449647:DbNodeDescriptor" />
         <item name="db_recover" type="e3449647:DbNodeDescriptor" />
+        <item name="tb_stock" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="db_recover@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="db_recover" type="e3449647:DbNodeDescriptor" />
         <item name="tb_storage" type="e3449647:DbNodeDescriptor" />
       </path>
     </expand>
@@ -69,105 +75,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="steel.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web/steel/steel.jsp">
+      <file leaf-file-name="storage.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web/storage/storage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="25" column="6" lean-forward="false" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+            <state relative-caret-position="839">
+              <caret line="175" column="77" lean-forward="false" selection-start-line="175" selection-start-column="67" selection-end-line="175" selection-end-column="77" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SaleController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/web/sale/SaleController.java">
+      <file leaf-file-name="stock.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web/stock/stock.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state relative-caret-position="328">
+              <caret line="107" column="42" lean-forward="true" selection-start-line="107" selection-start-column="42" selection-end-line="107" selection-end-column="42" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="n#style#0;n#blockquote#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StorageService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/service/StorageService.java">
+      <file leaf-file-name="StockDao.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StockDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StorageDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/dao/StorageDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="32" column="46" lean-forward="false" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tb_steel" pinned="false" current-in-tab="true">
-        <entry file="das://table:/4fb8dd46/538c1840-3c79-4562-a43b-90eb189c102e/db_recover.tb_steel">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StorageDao.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StorageDao.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+            <state relative-caret-position="412">
+              <caret line="13" column="46" lean-forward="false" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
               <folding>
-                <marker date="1508314138790" expanded="true" signature="252:356" ph="SELECT * FRO... tb_storage" />
-                <marker date="1508314138790" expanded="true" signature="431:473" ph="SELECT * FRO... tb_storage" />
-                <marker date="1508314138790" expanded="true" signature="550:589" ph="SELECT count... tb_storage" />
-                <marker date="1508314138790" expanded="true" signature="667:706" ph="delete from " />
-                <marker date="1508314138790" expanded="true" signature="782:914" ph="INSERT INTO tb_storage... " />
+                <marker date="1508385681038" expanded="true" signature="248:448" ph="SELECT * FRO... tb_stock" />
+                <marker date="1508385681038" expanded="true" signature="290:338" ph="SELECT stora... tb_storage" />
+                <marker date="1508385681038" expanded="true" signature="523:560" ph="SELECT count... tb_stock" />
+                <marker date="1508385681038" expanded="true" signature="642:759" ph="INSERT INTO tb_stock... " />
+                <marker date="1508385681038" expanded="true" signature="844:904" ph="delete from " />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomerDao.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CustomerDao.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-              <folding>
-                <marker date="1508313961730" expanded="true" signature="254:361" ph="SELECT * FRO... tb_customer" />
-                <marker date="1508313961730" expanded="true" signature="439:482" ph="SELECT * FRO... tb_customer" />
-                <marker date="1508313961730" expanded="true" signature="560:600" ph="SELECT count... tb_customer" />
-                <marker date="1508313961730" expanded="true" signature="679:719" ph="delete from " />
-                <marker date="1508313961730" expanded="true" signature="798:1025" ph="INSERT INTO tb_customer... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="steel.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web/steel.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4790">
-              <caret line="18" column="7" lean-forward="false" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sale.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web/sale/sale.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="276" column="126" lean-forward="false" selection-start-line="276" selection-start-column="126" selection-end-line="276" selection-end-column="126" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -184,10 +125,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>add</find>
-      <find>findUser</find>
-      <find>Name</find>
-      <find>userInfo</find>
       <find>preview</find>
       <find>adminPasswordPreview</find>
       <find>adminNamePreview</find>
@@ -202,7 +139,6 @@
       <find>user</find>
       <find>delete</find>
       <find>layui-form-label</find>
-      <find>update-form</find>
       <find>customerName</find>
       <find>steelName</find>
       <find>用户</find>
@@ -213,7 +149,12 @@
       <find>steelService</find>
       <find>tr_1</find>
       <find>year_ten</find>
+      <find>addUserAjax</find>
+      <find>111</find>
+      <find>update-form</find>
       <find>saleSteelId</find>
+      <find>addStorage</find>
+      <find>findStock</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -227,9 +168,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/eu/front/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/eu/front/dao/LoginDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/eu/front/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eu/front/web/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eu/front/web/user/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" />
@@ -242,17 +180,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/eu/front/web/steel/SteelController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eu/front/web/storage/SteelController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eu/front/web/storage/StorageController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web/storage/storage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web/steel/steel.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web/customerce/customerce.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/eu/front/dao/StockDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eu/front/service/StockService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eu/front/service/impl/StockServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eu/front/web/Stock/StockController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eu/front/web/stock/StockController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web/stock/stock.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/StockDao.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/page/main.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/SaleDao.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/RecoveryDao.xml" />
@@ -263,7 +197,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/eu/front/service/RecoveryService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eu/front/web/menu/menuController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/datas/nav.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/eu/front/service/impl/SaleServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eu/front/service/SteelService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eu/front/dao/SteelDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/SteelDao.xml" />
@@ -273,11 +206,19 @@
         <option value="$PROJECT_DIR$/src/main/java/com/eu/front/dao/CustomerDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/CustomerDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/eu/front/service/StorageService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/eu/front/service/impl/StorageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/eu/front/web/sale/SaleController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/eu/front/entity/Sale.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web/sale/sale.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/eu/front/entity/Stock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/eu/front/service/impl/SaleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web/storage/storage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/eu/front/dao/StockDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eu/front/dao/StorageDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/StorageDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/eu/front/web/sale/SaleController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web/sale/sale.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/eu/front/service/impl/StorageServiceImpl.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/538c1840-3c79-4562-a43b-90eb189c102e/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/StockDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web/stock/stock.jsp" />
       </list>
     </option>
   </component>
@@ -307,11 +248,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1" />
+    <option name="y" value="1" />
+    <option name="width" value="1918" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -354,9 +295,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -482,6 +420,26 @@
               <item name="Recover" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="stock" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Recover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Recover" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Recover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Recover" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -562,10 +520,33 @@
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="steel" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Recover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Recover" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="stock" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Recover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Recover" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1186,16 +1167,16 @@
       <workItem from="1508130268777" duration="20765000" />
       <workItem from="1508214461953" duration="13099000" />
       <workItem from="1508289004209" duration="16204000" />
-      <workItem from="1508316459211" duration="1940000" />
+      <workItem from="1508316459211" duration="6872000" />
+      <workItem from="1508374311778" duration="7510000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68579000" />
+    <option name="totallyTimeSpent" value="81021000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1209,7 +1190,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3872768" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3794643" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1219,8 +1200,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18167202" sideWeight="0.4888393" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18381564" sideWeight="0.4888393" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17309754" sideWeight="0.5064695" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1795284" sideWeight="0.51116073" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1283,7 +1265,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="33" />
+      <option name="time" value="44" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1292,90 +1274,12 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://table:/4fb8dd46/538c1840-3c79-4562-a43b-90eb189c102e/db_recover.tb_storage">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/entity/Storage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/web/customerce/CustomerceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1013">
-          <caret line="61" column="35" lean-forward="false" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/web/storage/StorageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web/storage/storage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="168" column="32" lean-forward="false" selection-start-line="168" selection-start-column="32" selection-end-line="168" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/tag.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/service/impl/StockServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="23" column="40" lean-forward="true" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/service/StockService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web/stock/stock.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="106" column="60" lean-forward="true" selection-start-line="106" selection-start-column="60" selection-end-line="106" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StockDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="4" column="61" lean-forward="false" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
-          <folding>
-            <marker date="1508305625135" expanded="true" signature="248:346" ph="SELECT * FRO... tb_stock" />
-            <marker date="1508305625135" expanded="true" signature="421:458" ph="SELECT count... tb_stock" />
           </folding>
         </state>
       </provider>
@@ -1391,26 +1295,6 @@
             <marker date="1508240745716" expanded="true" signature="871:908" ph="delete from " />
             <marker date="1508240745716" expanded="true" signature="997:1034" ph="SELECT * fro... tb_admin" />
             <marker date="1508240745716" expanded="true" signature="1110:1335" ph="UPDATE tb_ad... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/dao/StockDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/web/stock/StockController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1464,7 +1348,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1535,8 +1418,8 @@
         <state relative-caret-position="408">
           <caret line="39" column="26" lean-forward="false" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="26" />
           <folding>
-            <element signature="e#862#863#0" expanded="true" />
-            <element signature="e#902#903#0" expanded="true" />
+            <element signature="e#862#863#0" expanded="false" />
+            <element signature="e#902#903#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1545,25 +1428,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1236">
           <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/service/impl/SaleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-751">
-          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/service/SaleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1580,20 +1444,6 @@
         <state relative-caret-position="514">
           <caret line="31" column="64" lean-forward="true" selection-start-line="28" selection-start-column="4" selection-end-line="31" selection-end-column="64" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SteelDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="18" column="48" lean-forward="false" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-          <folding>
-            <marker date="1508313683915" expanded="true" signature="248:346" ph="SELECT * FRO... tb_steel" />
-            <marker date="1508313683915" expanded="true" signature="421:458" ph="SELECT count... tb_steel" />
-            <marker date="1508313683915" expanded="true" signature="534:571" ph="delete from " />
-            <marker date="1508313683915" expanded="true" signature="643:761" ph="INSERT INTO tb_steel... " />
-            <marker date="1508313683915" expanded="true" signature="834:874" ph="SELECT * FRO... tb_steel" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1637,43 +1487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/service/StorageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/service/impl/StorageServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="37" column="25" lean-forward="false" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StorageDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
-          <folding>
-            <marker date="1508314138790" expanded="true" signature="252:356" ph="SELECT * FRO... tb_storage" />
-            <marker date="1508314138790" expanded="true" signature="431:473" ph="SELECT * FRO... tb_storage" />
-            <marker date="1508314138790" expanded="true" signature="550:589" ph="SELECT count... tb_storage" />
-            <marker date="1508314138790" expanded="true" signature="667:706" ph="delete from " />
-            <marker date="1508314138790" expanded="true" signature="782:914" ph="INSERT INTO tb_storage... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/4fb8dd46/538c1840-3c79-4562-a43b-90eb189c102e/db_recover.tb_customer">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web/steel/steel.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1686,9 +1499,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1382">
           <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="230" selection-end-column="9" />
-          <folding>
-            <element signature="n#script#1;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1706,29 +1517,198 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://table:/4fb8dd46/538c1840-3c79-4562-a43b-90eb189c102e/db_recover.tb_steel">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/entity/Sale.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+          <folding>
+            <element signature="e#442#443#0" expanded="false" />
+            <element signature="e#490#491#0" expanded="false" />
+            <element signature="e#530#531#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web/sale/sale.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8262">
+          <caret line="243" column="57" lean-forward="false" selection-start-line="243" selection-start-column="57" selection-end-line="243" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/web/sale/SaleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state relative-caret-position="1326">
+          <caret line="54" column="28" lean-forward="false" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/service/SaleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/4fb8dd46/538c1840-3c79-4562-a43b-90eb189c102e/db_recover.tb_customer">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web/steel.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4046">
+          <caret line="18" column="7" lean-forward="false" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/service/impl/StockServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="23" column="40" lean-forward="true" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/entity/Stock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="11" column="5" lean-forward="false" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding>
+            <element signature="e#1053#1054#0" expanded="true" />
+            <element signature="e#1103#1104#0" expanded="true" />
+            <element signature="e#1144#1145#0" expanded="true" />
+            <element signature="e#1181#1182#0" expanded="true" />
+            <element signature="e#1241#1242#0" expanded="true" />
+            <element signature="e#1293#1294#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/service/impl/SaleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="39" column="34" lean-forward="true" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web/steel.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/web/storage/StorageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4790">
-          <caret line="18" column="7" lean-forward="false" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+        <state relative-caret-position="400">
+          <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web/sale/sale.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/service/StorageService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="276" column="126" lean-forward="false" selection-start-line="276" selection-start-column="126" selection-end-line="276" selection-end-column="126" />
+        <state relative-caret-position="338">
+          <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SteelDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <marker date="1508313683915" expanded="true" signature="248:346" ph="SELECT * FRO... tb_steel" />
+            <marker date="1508313683915" expanded="true" signature="421:458" ph="SELECT count... tb_steel" />
+            <marker date="1508313683915" expanded="true" signature="534:571" ph="delete from " />
+            <marker date="1508313683915" expanded="true" signature="643:761" ph="INSERT INTO tb_steel... " />
+            <marker date="1508313683915" expanded="true" signature="834:874" ph="SELECT * FRO... tb_steel" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/4fb8dd46/538c1840-3c79-4562-a43b-90eb189c102e/db_recover.tb_storage">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/web/stock/StockController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/dao/StorageDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="34" column="28" lean-forward="false" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/service/impl/StorageServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="49" column="28" lean-forward="false" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StorageDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="18" column="13" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="18" selection-end-column="13" />
+          <folding>
+            <marker date="1508384653435" expanded="true" signature="260:301" ph="SELECT * FRO... tb_storage" />
+            <marker date="1508384653435" expanded="true" signature="372:476" ph="SELECT * FRO... tb_storage" />
+            <marker date="1508384653435" expanded="true" signature="551:593" ph="SELECT * FRO... tb_storage" />
+            <marker date="1508384653435" expanded="true" signature="670:709" ph="SELECT count... tb_storage" />
+            <marker date="1508384653435" expanded="true" signature="787:826" ph="delete from " />
+            <marker date="1508384653435" expanded="true" signature="902:1034" ph="INSERT INTO tb_storage... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/dao/StockDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web/storage/storage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="839">
+          <caret line="175" column="77" lean-forward="false" selection-start-line="175" selection-start-column="67" selection-end-line="175" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web/stock/stock.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="107" column="42" lean-forward="true" selection-start-line="107" selection-start-column="42" selection-end-line="107" selection-end-column="42" />
+          <folding>
+            <element signature="n#style#0;n#blockquote#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1739,18 +1719,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/eu/front/dao/StorageDao.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/538c1840-3c79-4562-a43b-90eb189c102e/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="32" column="46" lean-forward="false" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="46" />
+        <state relative-caret-position="68">
+          <caret line="2" column="122" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="122" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/4fb8dd46/538c1840-3c79-4562-a43b-90eb189c102e/db_recover.tb_steel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StockDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="13" column="46" lean-forward="false" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+          <folding>
+            <marker date="1508385681038" expanded="true" signature="248:448" ph="SELECT * FRO... tb_stock" />
+            <marker date="1508385681038" expanded="true" signature="290:338" ph="SELECT stora... tb_storage" />
+            <marker date="1508385681038" expanded="true" signature="523:560" ph="SELECT count... tb_stock" />
+            <marker date="1508385681038" expanded="true" signature="642:759" ph="INSERT INTO tb_stock... " />
+            <marker date="1508385681038" expanded="true" signature="844:904" ph="delete from " />
+          </folding>
         </state>
       </provider>
     </entry>

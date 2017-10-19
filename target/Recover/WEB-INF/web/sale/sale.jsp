@@ -96,14 +96,15 @@
             <div class="layui-inline">
                 <label class="layui-form-label" style="width: 200px;">年份：</label>
                 <div class="layui-input-inline">
-                    <select name="year" lay-filter="aihao" id="year_ten">
+                    <select name="saleYear" lay-filter="aihao" id="year_ten">
+                        <option value="">请选择</option>
                     </select>
                 </div>
             </div>
             <div class="layui-inline">
                 <label class="layui-form-label" style="width: 200px;">月份：</label>
                 <div class="layui-input-inline">
-                    <select name="tron_month" lay-filter="aihao">
+                    <select name="saleMonth" lay-filter="aihao">
                         <option value="1" selected="">1月份</option>
                         <option value="2">2月份</option>
                         <option value="3">3月份</option>
@@ -124,7 +125,7 @@
             <div class="layui-inline">
                 <label class="layui-form-label" style="width: 200px;">本次销售编号：</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="SalePhone" autocomplete="off" class="layui-input"
+                    <input type="text" name="saleCode" autocomplete="off" class="layui-input"
                            placeholder="本次销售编号">
                 </div>
             </div>
@@ -142,7 +143,7 @@
             <div class="layui-inline">
                 <label class="layui-form-label" style="width: 200px;">销售钢铁总重量(单位：吨)：</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="SaleCompany" autocomplete="off" class="layui-input"
+                    <input type="text" name="saleCapacity" autocomplete="off" class="layui-input"
                            placeholder="销售钢铁总重量(单位：吨)">
                 </div>
             </div>
@@ -150,7 +151,7 @@
             <div class="layui-inline">
                 <label class="layui-form-label" style="width: 200px;">销售单价(单位：元/吨)：</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="SaleCompany" autocomplete="off" class="layui-input"
+                    <input type="text" name="salePirce" autocomplete="off" class="layui-input"
                            placeholder="销售单价(单位：元/吨)">
                 </div>
             </div>
@@ -159,16 +160,18 @@
             <div class="layui-inline">
                 <label class="layui-form-label" style="width: 200px;">销售客户：</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="SaleCompany" autocomplete="off" class="layui-input"
-                           placeholder="销售客户">
+                    <select name="saleCustomerId" lay-filter="aihao" id="customerId">
+                        <option value="">请选择</option>
+                    </select>
                 </div>
             </div>
 
             <div class="layui-inline">
                 <label class="layui-form-label" style="width: 200px;">所属库房：</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="SaleCompany" autocomplete="off" class="layui-input"
-                           placeholder="所属库房">
+                    <select name="saleStorageId" lay-filter="aihao" id="storageId">
+                        <option value="">请选择</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -238,8 +241,8 @@
                 });
             },
             addUserAjax: function () {
-                let admin = $("#update-form").serialize();
-                $.post("${pageContext.request.contextPath}/Sale/addSale", admin, function (data) {
+                let sale = $("#update-form").serialize();
+                $.post("${pageContext.request.contextPath}/Sale/addSale", sale, function (data) {
                     layer.msg(data.msg, {time: 500});
                     if (data.result) {
                         setTimeout("location.reload()", 1000);
@@ -262,18 +265,20 @@
                 $.post("${pageContext.request.contextPath}/Sale/foreignKey",
                     function (data) {
                         $("#saleSteelId").html("");
+                        $("#customerId").html("");
+                        $("#storageId").html("");
                         console.log(data)
                         let customerce = data.customerce;
                         let steel = data.steel;
                         let storage = data.storage;
 
-                        for(let i = 0;i<customerce.length ;i++){
-
+                        for (let i = 0; i < customerce.length; i++) {
+                            $("#customerId").append(`<option value=` + customerce[i].id + `>` + customerce[i].customer_name + `</option>`)
                         }
-                        for(let i = 0;i<storage.length ;i++){
-
+                        for (let i = 0; i < storage.length; i++) {
+                            $("#storageId").append(`<option value=` + storage[i].id + `>` + storage[i].storage_name + `</option>`)
                         }
-                        for(let i = 0;i<steel.length ;i++){
+                        for (let i = 0; i < steel.length; i++) {
                             $("#saleSteelId").append(`<option value=` + steel[i].id + `>` + steel[i].steel_name + `</option>`)
                         }
                         form.render();

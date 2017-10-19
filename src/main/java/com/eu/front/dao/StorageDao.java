@@ -32,4 +32,7 @@ public interface StorageDao{
 	 */
 	List<Map<String, String>> queryStorageInfo() throws Exception;
 
+	Storage queryStorageById(String id);
+
+
 }

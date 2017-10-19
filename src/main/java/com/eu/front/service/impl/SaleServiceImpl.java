@@ -1,7 +1,9 @@
 package com.eu.front.service.impl;
 
 import com.eu.front.dao.SaleDao;
+import com.eu.front.dao.StockDao;
 import com.eu.front.entity.Sale;
+import com.eu.front.entity.Stock;
 import com.eu.front.service.SaleService;
 import com.eu.front.utils.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,8 @@ import java.util.Map;
 public class SaleServiceImpl implements SaleService {
     @Autowired
     private SaleDao saleDao;
+    @Autowired
+    private StockDao stockDao;
 
     @Override
     public List<Map<String, String>> querySale(PageUtil page, String userName) throws Exception {
@@ -31,6 +35,14 @@ public class SaleServiceImpl implements SaleService {
     @Override
     public void addSale(Sale sale) throws Exception {
         saleDao.addSale(sale);
+        //获取库存该库房的重量
+        int stockCapacity = Integer.parseInt(stockDao.queryStockById(sale.getSaleStorageId()).getStockCapacity());
+        Stock stock = new Stock();
+        String capacity = String.valueOf((stockCapacity - Integer.parseInt(sale.getSaleCapacity())));
+        //库房重量减去销售的重量
+        stock.setStockCapacity(capacity);
+
+        stockDao.addStock(stock);
     }
 
     @Override

@@ -100,10 +100,10 @@
         </div>
         <div class="layui-form-item">
             <div class="layui-inline">
-                <label class="layui-form-label" style="width: 130px;">库房所存废钢重量(/吨)：</label>
+                <label class="layui-form-label" style="width: 130px;">库房最大废钢存储量(/吨)：</label>
                 <div class="layui-input-inline">
                     <input type="text" name="storageCapacity" autocomplete="off" class="layui-input"
-                           placeholder="库房所存废钢重量(/吨)">
+                           placeholder="库房最大废钢存储量(/吨)">
                 </div>
             </div>
         </div>

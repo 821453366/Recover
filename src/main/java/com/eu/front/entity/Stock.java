@@ -5,18 +5,10 @@ public class Stock {
     private String stockMonth;
     private String stockCode;//代码
     private String stockCapacity;//大小
-    private String stockSteelId;//型号
+    private String stockStorageId;//型号
+
     public Stock() {
         super();
-    }
-    public Stock(Integer id,String stockYear,String stockMonth,String stockCode,String stockCapacity,String stockSteelId) {
-        super();
-        this.id = id;
-        this.stockYear = stockYear;
-        this.stockMonth = stockMonth;
-        this.stockCode = stockCode;
-        this.stockCapacity = stockCapacity;
-        this.stockSteelId = stockSteelId;
     }
     public Integer getId() {
         return this.id;
@@ -58,12 +50,11 @@ public class Stock {
         this.stockCapacity = stockCapacity;
     }
 
-    public String getStockSteelId() {
-        return this.stockSteelId;
+    public String getStockStorageId() {
+        return stockStorageId;
     }
 
-    public void setStockSteelId(String stockSteelId) {
-        this.stockSteelId = stockSteelId;
+    public void setStockStorageId(String stockStorageId) {
+        this.stockStorageId = stockStorageId;
     }
-
 }

@@ -1,5 +1,6 @@
 package com.eu.front.service.impl;
 
+import com.eu.front.dao.StockDao;
 import com.eu.front.dao.StorageDao;
 import com.eu.front.entity.Storage;
 import com.eu.front.service.StorageService;
@@ -13,6 +14,8 @@ import java.util.Map;
 
 @Service
 public class StorageServiceImpl implements StorageService {
+    @Autowired
+    private StockDao stockDao;
     @Autowired
     private StorageDao storageDao;
 
@@ -34,12 +37,17 @@ public class StorageServiceImpl implements StorageService {
     }
 
     @Override
-    public void addStorage(Storage customer) throws Exception {
-        storageDao.addStorage(customer);
+    public void addStorage(Storage storage) throws Exception {
+        storageDao.addStorage(storage);
+        //用ID替代初始化的0值
+        storage.setId(0);
+        stockDao.addStockCustomer(storage);
     }
 
     @Override
     public void deleteStorage(String id) throws Exception {
+        Storage storage = storageDao.queryStorageById(id);
+        stockDao.deleteStockCustomer(storage);
         storageDao.deleteStorage(id);
     }
 

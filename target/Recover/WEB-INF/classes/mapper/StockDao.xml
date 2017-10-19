@@ -2,10 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.eu.front.dao.StockDao">
     <select id="queryStock" resultType="map">
-        SELECT * FROM tb_stock where stock_code like #{stockCode} order by id DESC  LIMIT #{start}, #{end}
+        SELECT * FROM tb_stock
+        LEFT JOIN (SELECT storage_code,storage_name FROM tb_storage) storage on storage.storage_code = tb_stock.stock_storage_id
+        order by id DESC  LIMIT #{start}, #{end}
     </select>
     <select id="queryStockCount" resultType="long">
         SELECT count(1)
         FROM tb_stock
     </select>
+    <update id="addStockCustomer" parameterType="Storage">
+        INSERT INTO tb_stock(stock_storage_id,stock_capacity,stock_code)
+        VALUES (#{storageCode},#{id},#{storageCode})
+    </update>
+    <delete id="deleteStockCustomer" parameterType="Storage">
+        delete  from tb_stock where stock_storage_id =#{storageCode}
+    </delete>
 </mapper>
