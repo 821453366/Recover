@@ -2,7 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.eu.front.dao.SaleDao">
     <select id="querySale" resultType="map">
-        SELECT * FROM tb_sale where sale_code like #{saleCode} order by id DESC  LIMIT #{start}, #{end}
+        SELECT * FROM tb_sale
+        LEFT JOIN (SELECT storage_code,storage_name FROM tb_storage) storage on storage.storage_code = tb_sale.sale_storage_id
+        LEFT JOIN (SELECT  id customerId,customer_name FROM tb_customer) customer on customer.customerId = tb_sale.sale_customer_id
+        where sale_code like #{saleCode}
+        order by  sale_year DESC, sale_month DESC ,sale_day DESC  LIMIT #{start}, #{end}
     </select>
 
     <select id="querySaleCount" resultType="long">
@@ -10,13 +14,13 @@
         FROM tb_sale
     </select>
     <update id="addSale" parameterType="Sale">
-        INSERT INTO tb_sale(recovery_year,recovery_month,recovery_code,recovery_steel_id,recovery_capacity,recovery_pirce,recovery_storage_id)
-        VALUES (#{recoveryYear},#{recoveryMonth},#{recoveryCode},#{recoverySteelId},#{recoveryCapacity},#{recoveryPirce},#{recoveryStorageId})
+        INSERT INTO tb_sale(sale_year,sale_month,sale_day,sale_code,sale_capacity,sale_pirce,sale_customer_id,sale_storage_id)
+        VALUES (#{saleYear},#{saleMonth},#{saleDay},#{saleCode},#{saleCapacity},#{salePirce},#{saleCustomerId},#{saleStorageId})
     </update>
     <delete id="deleteSale" parameterType="string">
         delete  from tb_sale where id =#{id}
     </delete>
-    <select id="findById" parameterType="int" resultType="Sale">
+    <select id="findById" parameterType="string" resultType="Sale">
         SELECT * from tb_sale where id=#{id}
     </select>
     <!--<update id="updateSaleInfo" parameterType="Sale">-->

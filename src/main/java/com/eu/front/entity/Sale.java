@@ -3,12 +3,22 @@ public class Sale {
     private Integer id;
     private String saleYear;//时间
     private String saleMonth;
+    private String saleDay;
     private String saleCode;
     private String saleSteelId;
     private String saleCapacity;
     private String salePirce;
     private String saleCustomerId;//客户id
     private String saleStorageId;
+
+    public String getSaleDay() {
+        return saleDay;
+    }
+
+    public void setSaleDay(String saleDay) {
+        this.saleDay = saleDay;
+    }
+
     public Sale() {
         super();
     }

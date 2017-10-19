@@ -48,6 +48,19 @@ public class RecoveryServiceImpl implements RecoveryService {
 
     @Override
     public void deleteRecovery(String id) throws Exception {
+        //查询回收编号
+        Recovery recovery= recoveryDao.findById(id);
         recoveryDao.deleteRecovery(id);
+
+        Stock stock1 = stockDao.queryStockById(recovery.getRecoveryStorageId());
+        //获取库存该库房的重量
+        int stockCapacity = Integer.parseInt(stock1.getStockCapacity());
+
+        Stock stock = new Stock();
+        String capacity = String.valueOf((stockCapacity - Integer.parseInt(recovery.getRecoveryCapacity())));
+        //库房重量减去销售的重量
+        stock.setStockCapacity(capacity);
+        stock.setStockStorageId(recovery.getRecoveryStorageId());
+        stockDao.addStock(stock);
     }
 }

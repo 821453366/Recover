@@ -35,18 +35,32 @@ public class SaleServiceImpl implements SaleService {
     @Override
     public void addSale(Sale sale) throws Exception {
         saleDao.addSale(sale);
+        Stock stock1 = stockDao.queryStockById(sale.getSaleStorageId());
         //获取库存该库房的重量
-        int stockCapacity = Integer.parseInt(stockDao.queryStockById(sale.getSaleStorageId()).getStockCapacity());
+        int stockCapacity = Integer.parseInt(stock1.getStockCapacity());
+
         Stock stock = new Stock();
         String capacity = String.valueOf((stockCapacity - Integer.parseInt(sale.getSaleCapacity())));
         //库房重量减去销售的重量
         stock.setStockCapacity(capacity);
-
+        stock.setStockStorageId(sale.getSaleStorageId());
         stockDao.addStock(stock);
     }
 
     @Override
     public void deleteSale(String id) throws Exception {
+        Sale sale= saleDao.findById(id);
         saleDao.deleteSale(id);
+
+        Stock stock1 = stockDao.queryStockById(sale.getSaleStorageId());
+        //获取库存该库房的重量
+        int stockCapacity = Integer.parseInt(stock1.getStockCapacity());
+
+        Stock stock = new Stock();
+        String capacity = String.valueOf((stockCapacity + Integer.parseInt(sale.getSaleCapacity())));
+        //库房重量减去销售的重量
+        stock.setStockCapacity(capacity);
+        stock.setStockStorageId(sale.getSaleStorageId());
+        stockDao.addStock(stock);
     }
 }

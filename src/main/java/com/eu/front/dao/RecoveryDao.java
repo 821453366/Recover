@@ -26,4 +26,6 @@ public interface RecoveryDao{
 	 */
 	void deleteRecovery(String id) throws Exception;
 
+	Recovery findById(String id) throws Exception;
+
 }

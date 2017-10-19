@@ -20,7 +20,7 @@
     <delete id="deleteRecovery" parameterType="string">
         delete  from tb_recovery where id =#{id}
     </delete>
-    <select id="findById" parameterType="int" resultType="Recovery">
+    <select id="findById" parameterType="string" resultType="Recovery">
         SELECT * from tb_recovery where id=#{id}
     </select>
     <!--<update id="updateRecoveryInfo" parameterType="Recovery">-->

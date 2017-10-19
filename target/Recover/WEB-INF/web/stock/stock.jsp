@@ -62,7 +62,7 @@
         <td>{{ index+1}}</td>
         <th>{{item.stock_code == undefined ? "暂无" : 'KC00'+item.id}}</th>
         <th>{{item.storage_name == undefined ? "暂无" : item.storage_name}}</th>
-        <th>{{item.stock_capacity == undefined ? "暂无" : item.stock_capacity}}</th>
+        <th>{{item.stock_capacity == undefined ? "暂无" : "剩余："+item.stock_capacity+"吨"}}</th>
     </tr>
     {{# }); }}
 </script>

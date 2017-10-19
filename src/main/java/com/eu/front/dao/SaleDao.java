@@ -1,6 +1,7 @@
 package com.eu.front.dao;
 
 import com.eu.front.entity.Sale;
+import com.eu.front.entity.Stock;
 
 import java.util.List;
 import java.util.Map;
@@ -25,4 +26,7 @@ public interface SaleDao{
 	 * @param id
 	 */
 	void deleteSale(String id) throws Exception;
+
+
+	Sale findById(String id);
 }

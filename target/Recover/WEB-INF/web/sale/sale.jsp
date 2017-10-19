@@ -48,8 +48,8 @@
                     <th>编号</th>
                     <th>年份</th>
                     <th>月份</th>
+                    <th>日</th>
                     <th>本次销售编号</th>
-                    <th>销售钢铁类型</th>
                     <th>销售钢铁总重量(单位：吨)</th>
                     <th>销售单价(单位：元/吨)</th>
                     <th>销售客户</th>
@@ -70,14 +70,14 @@
     {{# layui.each(d.info, function(index, item){ }}
     <tr>
         <td>{{ index+1}}</td>
-        <td>{{item.sale_year == undefined ? "暂无" : item.sale_year}}</td>
-        <th>{{item.sale_month == undefined ? "暂无" : item.sale_month}}</th>
+        <td>{{item.sale_year == undefined ? "暂无" : item.sale_year+"年"}}</td>
+        <th>{{item.sale_month == undefined ? "暂无" : item.sale_month+"月"}}</th>
+        <th>{{item.sale_day == undefined ? "暂无" : item.sale_day+"日"}}</th>
         <th>{{item.sale_code == undefined ? "暂无" : item.sale_code}}</th>
-        <th>{{item.sale_steel_id == undefined ? "暂无" : item.sale_steel_id}}</th>
         <th>{{item.sale_capacity == undefined ? "暂无" : item.sale_capacity+'吨'}}</th>
         <th>{{item.sale_pirce == undefined ? "暂无" : item.sale_pirce+'元/吨'}}</th>
-        <th>{{item.sale_customer_id == undefined ? "暂无" : item.sale_customer_id}}</th>
-        <th>{{item.sale_storage_id == undefined ? "暂无" : item.sale_storage_id}}</th>
+        <th>{{item.customer_name == undefined ? "暂无" : item.customer_name}}</th>
+        <th>{{item.storage_name == undefined ? "暂无" : item.storage_name}}</th>
         <td>
             <button data-id='1' data-opt='del' class='layui-btn layui-btn-danger layui-btn-small layui-icon'
                     onclick="cl.delete('{{item.id}}')">
@@ -123,6 +123,13 @@
         </div>
         <div class="layui-form-item">
             <div class="layui-inline">
+                <label class="layui-form-label" style="width: 200px;">日：</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="saleDay" autocomplete="off" class="layui-input"
+                           placeholder="几号">
+                </div>
+            </div>
+            <div class="layui-inline">
                 <label class="layui-form-label" style="width: 200px;">本次销售编号：</label>
                 <div class="layui-input-inline">
                     <input type="text" name="saleCode" autocomplete="off" class="layui-input"
@@ -130,14 +137,7 @@
                 </div>
             </div>
 
-            <div class="layui-inline">
-                <label class="layui-form-label" style="width: 200px;">销售钢铁类型：</label>
-                <div class="layui-input-inline">
-                    <select name="saleSteelId" lay-filter="aihao" id="saleSteelId">
-                        <option value="">请选择</option>
-                    </select>
-                </div>
-            </div>
+
         </div>
         <div class="layui-form-item">
             <div class="layui-inline">
@@ -276,10 +276,10 @@
                             $("#customerId").append(`<option value=` + customerce[i].id + `>` + customerce[i].customer_name + `</option>`)
                         }
                         for (let i = 0; i < storage.length; i++) {
-                            $("#storageId").append(`<option value=` + storage[i].id + `>` + storage[i].storage_name + `</option>`)
+                            $("#storageId").append(`<option value=` + storage[i].storage_code + `>` + storage[i].storage_name + `</option>`)
                         }
                         for (let i = 0; i < steel.length; i++) {
-                            $("#saleSteelId").append(`<option value=` + steel[i].id + `>` + steel[i].steel_name + `</option>`)
+                            $("#saleSteelId").append(`<option value=` + steel[i].steel_version + `>` + steel[i].steel_name + `</option>`)
                         }
                         form.render();
                     });
