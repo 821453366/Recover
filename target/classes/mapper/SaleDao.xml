@@ -10,8 +10,8 @@
         FROM tb_sale
     </select>
     <update id="addSale" parameterType="Sale">
-        INSERT INTO tb_sale(recovery_year,recovery_month,recovery_code,recovery_steel_id,recovery_capacity,recovery_pirce,recovary_storage_id)
-        VALUES (#{recoveryYear},#{recoveryMonth},#{recoveryCode},#{recoverySteelId},#{recoveryCapacity},#{recoveryPirce},#{recovaryStorageId})
+        INSERT INTO tb_sale(recovery_year,recovery_month,recovery_code,recovery_steel_id,recovery_capacity,recovery_pirce,recovery_storage_id)
+        VALUES (#{recoveryYear},#{recoveryMonth},#{recoveryCode},#{recoverySteelId},#{recoveryCapacity},#{recoveryPirce},#{recoveryStorageId})
     </update>
     <delete id="deleteSale" parameterType="string">
         delete  from tb_sale where id =#{id}

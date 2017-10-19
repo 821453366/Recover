@@ -3,24 +3,23 @@ public class Recovery {
     private Integer id;
     private String recoveryYear;
     private String recoveryMonth;
+    private String recoveryDay;
     private String recoveryCode;//代码
     private String recoverySteelId;//名称
     private String recoveryCapacity;//大小
     private String recoveryPirce;//价格
-    private String recovaryStorageId;
+    private String recoveryStorageId;
+
+    public String getRecoveryDay() {
+        return recoveryDay;
+    }
+
+    public void setRecoveryDay(String recoveryDay) {
+        this.recoveryDay = recoveryDay;
+    }
+
     public Recovery() {
         super();
-    }
-    public Recovery(Integer id,String recoveryYear,String recoveryMonth,String recoveryCode,String recoverySteelId,String recoveryCapacity,String recoveryPirce,String recovaryStorageId) {
-        super();
-        this.id = id;
-        this.recoveryYear = recoveryYear;
-        this.recoveryMonth = recoveryMonth;
-        this.recoveryCode = recoveryCode;
-        this.recoverySteelId = recoverySteelId;
-        this.recoveryCapacity = recoveryCapacity;
-        this.recoveryPirce = recoveryPirce;
-        this.recovaryStorageId = recovaryStorageId;
     }
     public Integer getId() {
         return this.id;
@@ -78,12 +77,11 @@ public class Recovery {
         this.recoveryPirce = recoveryPirce;
     }
 
-    public String getRecovaryStorageId() {
-        return this.recovaryStorageId;
+    public String getRecoveryStorageId() {
+        return recoveryStorageId;
     }
 
-    public void setRecovaryStorageId(String recovaryStorageId) {
-        this.recovaryStorageId = recovaryStorageId;
+    public void setRecoveryStorageId(String recoveryStorageId) {
+        this.recoveryStorageId = recoveryStorageId;
     }
-
 }

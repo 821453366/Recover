@@ -19,31 +19,31 @@ public class menuController extends HttpServlet {
     }
     //客户
     @RequestMapping("/customerce")
-    public String classUserRate() {
+    public String customerce() {
         return "web/customerce/customerce";
     }
     //废钢类型
     @RequestMapping("/steel")
-    public String studioClassFront() {
+    public String steel() {
         return "web/steel/steel";
     }
     //库房
     @RequestMapping("/storage")
-    public String leaveReason() {
+    public String storage() {
         return "web/storage/storage";
     }
     //
     @RequestMapping("/stock")
-    public String superUserInfo() {
+    public String stock() {
         return "web/stock/stock";
     }
     @RequestMapping("/Sale")
-    public String firstUserInfo() {
+    public String Sale() {
         return "web/sale/sale";
     }
-    @RequestMapping("/secondUserInfo")
-    public String secondUserInfo() {
-        return "userInfo/secondUserInfo";
+    @RequestMapping("/recovery")
+    public String recovery() {
+        return "web/recovery/recovery";
     }
     @RequestMapping("/thirdUserInfo")
     public String thirdUserInfo() {

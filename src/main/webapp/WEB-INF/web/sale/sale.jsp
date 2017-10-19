@@ -176,7 +176,7 @@
             </div>
         </div>
 
-        <div class="layui-input-block">
+        <div class="layui-input-block" style="margin-left: 25%">
             <button class="layui-btn" onclick="cl.addUserAjax()">立即提交</button>
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
         </div>
@@ -284,7 +284,6 @@
                         form.render();
                     });
             }
-
         }
         $(function () {
             cl.list();

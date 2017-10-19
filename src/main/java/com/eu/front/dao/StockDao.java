@@ -14,7 +14,7 @@ public interface StockDao{
 
 	Long queryStockCount() throws Exception;
 
-	Stock queryStockById(String id);
+	Stock queryStockById(String stockStorageId);
 
 	 void addStock( Stock Stock);
 	 //库房增加 库存显示

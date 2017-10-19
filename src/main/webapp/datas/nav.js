@@ -4,6 +4,11 @@ var navs = [{
     "href": "menu/Sale",
     "spread": false
 },{
+    "title": "回收账单",
+    "icon": "fa fa-newspaper-o",
+    "href": "menu/recovery",
+    "spread": false
+},{
     "title": "客户信息",
     "icon": "fa fa-newspaper-o",
     "href": "menu/customerce",
