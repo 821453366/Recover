@@ -33,28 +33,24 @@ var navs = [{
     "icon": "fa fa-fax",
     "spread": false,
     "children": [{
-        "title": "添加账目",
+        "title": "销售报表",
         "icon": "fa fa-book",
-        "href": "page/quitSchool_Pandect.html"
+        "href": "menu/findRecover"
     }, {
-        "title": "添加账目",
+        "title": "回收报表",
         "icon": "&#xe63c;",
-        "href": "page/quitSchool_cause.html"
-    }, {
-        "title": "添加账目",
-        "icon": " fa fa-pencil",
-        "href": "page/quitSchool_grasp.html"
+        "href": "menu/findRecover"
     }]
 },{
     "title": "账目核算",
     "icon": "fa fa-fax",
     "spread": false,
     "children": [{
-        "title": "销售账目核算",
+        "title": "出账账目核算",
         "icon": "fa fa-book",
         "href": "menu/reckonSale"
     },{
-        "title": "回收账目核算",
+        "title": "进账账目核算",
         "icon": "fa fa-book",
         "href": "menu/reckonRecover"
     }]

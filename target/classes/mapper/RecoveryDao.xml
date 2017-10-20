@@ -28,4 +28,7 @@
         SELECT * from tb_recovery order by  recovery_year DESC, recovery_month DESC ,recovery_day DESC  LIMIT 10
     </select>
 
+    <select id="findRecover" resultType="map">
+        SELECT * from tb_recovery order by  recovery_year DESC, recovery_month DESC ,recovery_day DESC
+    </select>
 </mapper>

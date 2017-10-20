@@ -3,6 +3,7 @@ package com.eu.front.web;
 import com.eu.front.dto.Result;
 import com.eu.front.entity.Admin;
 import com.eu.front.service.LoginService;
+import com.eu.front.service.UserService;
 import com.eu.front.utils.Constant;
 import com.eu.front.utils.ImgUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,8 @@ import java.util.Map;
 @Controller
 @RequestMapping("")
 public class LoginController extends HttpServlet {
+    @Autowired
+    private UserService userService;
     @Autowired
     private LoginService loginService;
 
@@ -74,6 +77,24 @@ public class LoginController extends HttpServlet {
 
         } catch (Exception e) {
             e.printStackTrace();
+        }
+
+        return result;
+    }
+
+    @RequestMapping("/userInfo")
+    @ResponseBody
+    public Map<String, Object> findById(HttpSession session) {
+        Map<String, Object> result = new HashMap<String, Object>();
+        int id = ((Admin)session.getAttribute("user")).getId();
+
+        try {
+            result.put("user", userService.findById(id));
+            result.put("msg", Constant.SEARCH_SUCCESS);
+            result.put("result", true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            result.put("msg", Constant.SEARCH_FAILURE);
         }
 
         return result;

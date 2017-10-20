@@ -29,4 +29,10 @@ public interface RecoveryDao{
 	Recovery findById(String id) throws Exception;
 
 	List<Map<String, String>> queryRecoveryTen() throws Exception;
+
+	/**
+	 * 查找所有回收信息报表
+	 * @return
+	 */
+	List<Map<String, String>> findRecover();
 }

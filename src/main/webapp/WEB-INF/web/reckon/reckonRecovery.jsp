@@ -115,33 +115,9 @@
                     "json"
                 );
             },
-            foreignKey: function () {
-                $.post("${pageContext.request.contextPath}/Recovery/foreignKey",
-                    function (data) {
-                        $("#recoverySteelId").html("");
-                        $("#customerId").html("");
-                        $("#storageId").html("");
-                        console.log(data)
-                        let customerce = data.customerce;
-                        let steel = data.steel;
-                        let storage = data.storage;
-
-                        for (let i = 0; i < customerce.length; i++) {
-                            $("#customerId").append(`<option value=` + customerce[i].id + `>` + customerce[i].customer_name + `</option>`)
-                        }
-                        for (let i = 0; i < storage.length; i++) {
-                            $("#storageId").append(`<option value=` + storage[i].storage_code + `>` + storage[i].storage_name + `</option>`)
-                        }
-                        for (let i = 0; i < steel.length; i++) {
-                            $("#recoverySteelId").append(`<option value=` + steel[i].steel_version + `>` + steel[i].steel_name + `</option>`)
-                        }
-                        form.render();
-                    });
-            }
         }
         $(function () {
             cl.list();
-            cl.foreignKey();
         });
     });
 

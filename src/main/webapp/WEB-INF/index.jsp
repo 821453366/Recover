@@ -39,12 +39,8 @@
         //显示头像及图片
         $.post("${pageContext.request.contextPath}/userInfo",
             function (data) {
-                let user = data.user;
-                $("#Name").html(user.nickname);
-                $("#userNameLocK").html(user.nickname);
-                $("#idName").html(user.username);
-                $("#images").text("").attr("src", HEAD_IMAGE_PREFIX + user.img);
-                $("#imageslockPwd").text("").attr("src", HEAD_IMAGE_PREFIX + user.img);
+                let user = data.user[0];
+                $("#Name").html(user.adminRealname);
             }
         )
 
@@ -62,74 +58,6 @@
             }
         )
     }
-    //用户信息
-    function userInfo() {
-        $.post("${pageContext.request.contextPath}/userInfo",
-            function (data) {
-            console.log(data)
-                let user = data.user;
-                $("#imagesInfo").text("").attr("src", HEAD_IMAGE_PREFIX + user.admin_img);
-                $("#nickname").val(user.nickname);
-                $("#username").val(user.username);
-                $("#sex").val(user.sex);
-                $("#age").val(user.age);
-                $("#phone").val(user.phone);
-                $("#date").val(user.date);
-                layer.open({
-                    type: 1,
-                    title: "用户信息",
-                    area: ["100%", "100%"],
-                    closeBtn: 1,
-                    content: $("#userInfo")
-                })
-
-            }
-        )
-    }
-    //用户信息
-    function updateInfo() {
-        $.post("${pageContext.request.contextPath}/userInfo",
-            function (data) {
-                let user = data.user;
-                $("#imagesToUpdate").text("").attr("src", HEAD_IMAGE_PREFIX + user.admin_img);
-                imgName = user.img;
-                $("#updateNickname").val(user.admin_realname);
-                $("#updateUsername").val(user.admin_name);
-                $("#updateSex").val(user.admin_name);
-                $("#updateAge").val(user.admin_age);
-                $("#updatePhone").val(user.admin_phone);
-                $("#updateDate").val(user.admin_date);
-                layer.open({
-                    type: 1,
-                    title: "用户信息",
-                    area: ["100%", "100%"],
-                    closeBtn: 1,
-                    content: $("#updateInfo")
-                })
-            }
-        )
-    }
-    //用户信息
-    function updateInfoAjax() {
-        let updateNickname = $("#updateNickname").val();
-        let updateUsername = $("#updateUsername").val();
-        let updateSex = $("#updateSex").val();
-        let updateAge = $("#updateAge").val();
-        let updatePhone = $("#updatePhone").val();
-        $.post("${pageContext.request.contextPath}/updateInfoAjax", {
-                img: imgName,
-                nickname:updateNickname,
-                sex:updateSex,
-                age:updateAge,
-                phone:updatePhone,
-                username:updateUsername,
-            },
-            function (data) {
-                layer.msg(data.msg);
-            }
-        )
-    }
-
     function preview () {
         $.post("${pageContext.request.contextPath}/userInfo",
             function (data) {
@@ -145,7 +73,7 @@
         )
         layer.open({
             type: 1,
-            title: '管理员信息'
+            title: '我的信息'
             , content: $("#preview"),
             area: ['40%', '70%']
         });
@@ -233,7 +161,7 @@
 </body>
 <div id="preview" style="display: none">
     <fieldset class="layui-elem-field layui-field-title" >
-        <legend>管理员信息</legend>
+        <legend>我的信息</legend>
     </fieldset>
     <div style="padding-left: 25%;padding-top: 2%;">
         <form class="layui-form layui-form-pane" action="">

@@ -63,4 +63,9 @@ public class RecoveryServiceImpl implements RecoveryService {
         stock.setStockStorageId(recovery.getRecoveryStorageId());
         stockDao.addStock(stock);
     }
+
+    @Override
+    public List<Map<String, String>> findRecover() {
+        return recoveryDao.findRecover();
+    }
 }

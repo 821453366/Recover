@@ -1,7 +1,6 @@
 package com.eu.front.service;
 
 import com.eu.front.entity.Recovery;
-import com.eu.front.entity.Recovery;
 import com.eu.front.utils.PageUtil;
 
 import java.util.List;
@@ -26,4 +25,10 @@ public interface RecoveryService{
 	 * @param id
 	 */
 	void deleteRecovery(String id) throws Exception;
+
+	/**
+	 * 查找所有回收信息报表
+	 * @return
+	 */
+	List<Map<String, String>> findRecover();
 }
