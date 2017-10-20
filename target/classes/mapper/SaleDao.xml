@@ -23,11 +23,9 @@
     <select id="findById" parameterType="string" resultType="Sale">
         SELECT * from tb_sale where id=#{id}
     </select>
-    <!--<update id="updateSaleInfo" parameterType="Sale">-->
-    <!--UPDATE tb_sale-->
-    <!--SET tb_sale.admin_realname = #{adminRealname},tb_sale.admin_sex=#{adminSex},-->
-    <!--tb_sale.admin_age=#{adminAge},tb_sale.admin_phone=#{adminPhone}-->
-    <!--WHERE tb_sale.admin_name = #{adminName}-->
-    <!--</update>-->
+     <select id="querySaleTen"  resultType="map">
+        SELECT * from tb_sale order by  sale_year DESC, sale_month DESC ,sale_day DESC  LIMIT 10
+    </select>
+
 
 </mapper>

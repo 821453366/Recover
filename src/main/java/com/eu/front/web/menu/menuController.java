@@ -17,39 +17,50 @@ public class menuController extends HttpServlet {
     public String tronClass() {
         return "web/user/user";
     }
+
     //客户
     @RequestMapping("/customerce")
     public String customerce() {
         return "web/customerce/customerce";
     }
+
     //废钢类型
     @RequestMapping("/steel")
     public String steel() {
         return "web/steel/steel";
     }
+
     //库房
     @RequestMapping("/storage")
     public String storage() {
         return "web/storage/storage";
     }
+
     //
     @RequestMapping("/stock")
     public String stock() {
         return "web/stock/stock";
     }
+
     @RequestMapping("/Sale")
     public String Sale() {
         return "web/sale/sale";
     }
+
     @RequestMapping("/recovery")
     public String recovery() {
         return "web/recovery/recovery";
     }
-    @RequestMapping("/thirdUserInfo")
-    public String thirdUserInfo() {
-        return "userInfo/thirdUserInfo";
+
+    @RequestMapping("/reckonRecover")
+    public String reckonRecover() {
+        return "web/reckon/reckonRecovery";
     }
 
+    @RequestMapping("/reckonSale")
+    public String reckonSale() {
+        return "web/reckon/reckonSale";
+    }
 
 
 }

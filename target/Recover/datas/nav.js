@@ -50,9 +50,13 @@ var navs = [{
     "icon": "fa fa-fax",
     "spread": false,
     "children": [{
-        "title": "添加账目",
+        "title": "销售账目核算",
         "icon": "fa fa-book",
-        "href": "page/classroomUtilizationRatio.html"
+        "href": "menu/reckonSale"
+    },{
+        "title": "回收账目核算",
+        "icon": "fa fa-book",
+        "href": "menu/reckonRecover"
     }]
 },{
     "title": "用户信息",

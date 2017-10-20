@@ -106,7 +106,6 @@
                     closeBtn: 1,
                     content: $("#updateInfo")
                 })
-
             }
         )
     }
@@ -129,6 +128,28 @@
                 layer.msg(data.msg);
             }
         )
+    }
+
+    function preview () {
+        $.post("${pageContext.request.contextPath}/userInfo",
+            function (data) {
+                console.log(data)
+                let user = data.user[0];
+                $("#adminNamePreview").val(user.adminName);
+                $("#adminRealnamePreview").val(user.adminRealname);
+                $("#adminAgePreview").val(user.adminAge);
+                $("#adminSexPreview").val(user.adminSex);
+                $("#adminPhonePreview").val(user.adminPhone);
+                $("#adminDatePreview").val(user.adminDate);
+            }
+        )
+        layer.open({
+            type: 1,
+            title: '管理员信息'
+            , content: $("#preview"),
+            area: ['40%', '70%']
+        });
+
     }
     //图片上传
     layui.use('upload', function () {
@@ -163,10 +184,10 @@
 					</a>
 					<dl
 							class="layui-nav-child">
-						<dd>
-							<a style="cursor:pointer" onclick="userInfo()"><i class="fa fa-user-circle" aria-hidden="true"></i> 个人信息</a>
+						<dd >
+							<a style="cursor:pointer" onclick="preview()"><i class="fa fa-user-circle" aria-hidden="true"></i> 个人信息</a>
 						</dd>
-						<dd>
+						<dd style="display:none">
 							<a style="cursor:pointer" onclick="updateInfo()"><i class="fa fa-gear" aria-hidden="true"></i> 设置</a>
 						</dd>
 
@@ -210,129 +231,56 @@
 	<div class="site-mobile-shade"></div>
 </div>
 </body>
-<div id="userInfo" style="display: none">
-    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
-        <legend>个人信息</legend>
+<div id="preview" style="display: none">
+    <fieldset class="layui-elem-field layui-field-title" >
+        <legend>管理员信息</legend>
     </fieldset>
-    <div style="margin-left: 45%;">
-        <div style="width:100px; height: 140px;margin-left: 50px;">
-            <img id="imagesInfo" class="site-demo-upload"/>
-        </div>
-        <div style="margin-top: 100px;">
-
-        </div>
-    </div>
-    <div style="margin-left: 45%;margin-top: 50px;">
+    <div style="padding-left: 25%;padding-top: 2%;">
         <form class="layui-form layui-form-pane" action="">
 
             <div class="layui-form-item">
                 <label class="layui-form-label">用户姓名:</label>
                 <div class="layui-input-inline">
-                    <input readonly="readonly" type="text" id="nickname" lay-verify="required"
+                    <input readonly="readonly" type="text" id="adminRealnamePreview" lay-verify="required"
                            autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">用户ID：</label>
                 <div class="layui-input-inline">
-                    <input readonly="readonly" type="text" id="username" lay-verify="required"
+                    <input readonly="readonly" type="text" id="adminNamePreview" lay-verify="required"
                            autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">性别：</label>
                 <div class="layui-input-inline">
-                    <input type="text" id="sex" lay-verify="required" placeholder="请输入" autocomplete="off"
+                    <input type="text" id="adminSexPreview" lay-verify="required" placeholder="请输入" autocomplete="off"
                            class="layui-input" readonly="readonly">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">年龄：</label>
                 <div class="layui-input-inline">
-                    <input type="text" id="age" lay-verify="required" placeholder="请输入" autocomplete="off"
+                    <input type="text" id="adminAgePreview" lay-verify="required" placeholder="请输入" autocomplete="off"
                            class="layui-input" readonly="readonly">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">手机号：</label>
                 <div class="layui-input-inline">
-                    <input type="text" id="phone" lay-verify="required" placeholder="请输入" autocomplete="off"
+                    <input type="text" id="adminPhonePreview" lay-verify="required" placeholder="请输入" autocomplete="off"
                            class="layui-input" readonly="readonly">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">账号创建日期：</label>
                 <div class="layui-input-inline">
-                    <input type="text" id="date" lay-verify="required" placeholder="请输入" autocomplete="off"
+                    <input type="text" id="adminDatePreview" lay-verify="required" placeholder="请输入" autocomplete="off"
                            class="layui-input" readonly="readonly">
                 </div>
             </div>
 
-        </form>
-    </div>
-</div>
-<div id="updateInfo" style="display: none">
-    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
-        <legend>修改信息</legend>
-    </fieldset>
-    <div style="margin-left: 45%;">
-        <div style="width:100px; height: 140px;margin-left: 50px;">
-            <img id="imagesToUpdate" class="site-demo-upload"/>
-        </div>
-        <div style="margin-top: 100px;">
-            <input type="file" name="file" class="layui-upload-file" style="width: auto"
-                   lay-title="头像上传">
-        </div>
-    </div>
-    <div style="margin-left: 45%;margin-top: 50px;">
-        <form class="layui-form layui-form-pane" action="" enctype="multipart/form-data">
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">用户姓名:</label>
-                <div class="layui-input-inline">
-                    <input  type="text" id="updateNickname" lay-verify="required"
-                            autocomplete="off" class="layui-input">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">用户ID：</label>
-                <div class="layui-input-inline">
-                    <input readonly="readonly" type="text" id="updateUsername" lay-verify="required"
-                           autocomplete="off" class="layui-input">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">性别：</label>
-                <div class="layui-input-inline">
-                    <input type="text" id="updateSex" lay-verify="required" placeholder="请输入" autocomplete="off"
-                           class="layui-input" readonly="readonly">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">年龄：</label>
-                <div class="layui-input-inline">
-                    <input type="text" id="updateAge" lay-verify="required" placeholder="请输入" autocomplete="off"
-                           class="layui-input" >
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">手机号：</label>
-                <div class="layui-input-inline">
-                    <input type="text" id="updatePhone" lay-verify="required" placeholder="请输入" autocomplete="off"
-                           class="layui-input" >
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">账号创建日期：</label>
-                <div class="layui-input-inline">
-                    <input type="text" id="updateDate" lay-verify="required" placeholder="请输入" autocomplete="off"
-                           class="layui-input" readonly="readonly">
-                </div>
-            </div>
-            <button style="margin-left: 80px; width: 150px;margin-bottom: 50px;" class="layui-btn"
-                    onclick="updateInfoAjax()"><i class="layui-icon">&#xe61f;</i>
-                完成修改
-            </button>
         </form>
     </div>
 </div>

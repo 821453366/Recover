@@ -23,11 +23,9 @@
     <select id="findById" parameterType="string" resultType="Recovery">
         SELECT * from tb_recovery where id=#{id}
     </select>
-    <!--<update id="updateRecoveryInfo" parameterType="Recovery">-->
-        <!--UPDATE tb_recovery-->
-        <!--SET tb_recovery.admin_realname = #{adminRealname},tb_recovery.admin_sex=#{adminSex},-->
-        <!--tb_recovery.admin_age=#{adminAge},tb_recovery.admin_phone=#{adminPhone}-->
-        <!--WHERE tb_recovery.admin_name = #{adminName}-->
-    <!--</update>-->
+
+    <select id="queryRecoveryTen"  resultType="map">
+        SELECT * from tb_recovery order by  recovery_year DESC, recovery_month DESC ,recovery_day DESC  LIMIT 10
+    </select>
 
 </mapper>

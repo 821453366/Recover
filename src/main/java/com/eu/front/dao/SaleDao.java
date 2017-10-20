@@ -29,4 +29,6 @@ public interface SaleDao{
 
 
 	Sale findById(String id);
+
+	List<Map<String, String>> querySaleTen() throws Exception;
 }

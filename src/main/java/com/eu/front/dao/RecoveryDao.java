@@ -28,4 +28,5 @@ public interface RecoveryDao{
 
 	Recovery findById(String id) throws Exception;
 
+	List<Map<String, String>> queryRecoveryTen() throws Exception;
 }
