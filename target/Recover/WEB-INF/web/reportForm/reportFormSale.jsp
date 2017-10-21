@@ -26,16 +26,16 @@
 <body>
 <div class="admin-main">
     <fieldset class="layui-elem-field">
-        <legend>回收报表统计</legend>
+        <legend>销售报表统计</legend>
         <div style="margin: 20px;">
             <table class="site-table layui-table table-hover ">
                 <thead>
                 <tr>
                     <th>年份</th>
                     <th>月份</th>
-                    <th>回收次数</th>
-                    <th>回收总重量</th>
-                    <th>总回收额</th>
+                    <th>销售次数</th>
+                    <th>销售总重量</th>
+                    <th>总销售额</th>
                 </tr>
                 </thead>
                 <tbody id="tr_1">
@@ -70,8 +70,8 @@
                             let sumCount = 0;//总计
                             let sumCountCapacity = 0;//总计
                             let sumCountPirce = 0;//总计
-                            for (let i = 0; i < data.Recover.length; i++) {
-                                year.push(data.Recover[i].recovery_year);
+                            for (let i = 0; i < data.Sale.length; i++) {
+                                year.push(data.Sale[i].sale_year);
                             }
                             yearOnly = Array.from(new Set(year));
                             //选择月数
@@ -82,9 +82,9 @@
 
                                 let monthOnly;
                                 let month = [];
-                                for (let i = 0; i < data.Recover.length; i++) {
-                                    if (data.Recover[i].recovery_year == yearOnly[j]) {
-                                        month.push(data.Recover[i].recovery_month);
+                                for (let i = 0; i < data.Sale.length; i++) {
+                                    if (data.Sale[i].sale_year == yearOnly[j]) {
+                                        month.push(data.Sale[i].sale_month);
                                     }
                                 }
 
@@ -94,11 +94,11 @@
                                     let capacity = 0;
                                     let pirce = 0;
                                     let day = 0;
-                                    for (let r = 0; r < data.Recover.length; r++) {
-                                        if (data.Recover[r].recovery_month == monthOnly[i] && data.Recover[r].recovery_year == yearOnly[j]) {
+                                    for (let r = 0; r < data.Sale.length; r++) {
+                                        if (data.Sale[r].sale_month == monthOnly[i] && data.Sale[r].sale_year == yearOnly[j]) {
                                             day++;
-                                            capacity += parseInt(data.Recover[r].recovery_capacity);
-                                            pirce += parseInt(data.Recover[r].recovery_capacity) * parseInt(data.Recover[r].recovery_pirce)
+                                            capacity += parseInt(data.Sale[r].sale_capacity);
+                                            pirce += parseInt(data.Sale[r].sale_capacity) * parseInt(data.Sale[r].sale_pirce)
                                         }
                                     }
                                     _html += "<td  >" + monthOnly[i] + "月 </td>" +

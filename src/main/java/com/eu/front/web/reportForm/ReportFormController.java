@@ -1,6 +1,5 @@
 package com.eu.front.web.reportForm;
 
-import com.eu.front.dao.RecoveryDao;
 import com.eu.front.service.RecoveryService;
 import com.eu.front.service.SaleService;
 import com.eu.front.utils.Constant;
@@ -26,9 +25,12 @@ public class ReportFormController {
     public Map<String, Object> findRecover(){
         Map<String, Object> data = new HashMap<String, Object>();
         List<Map<String,String>> Recover;
+        List<Map<String,String>> Sale;
         try {
             Recover = recoveryService.findRecover();
+            Sale = saleService.findSale();
             data.put("Recover", Recover);
+            data.put("Sale", Sale);
             data.put("result", true);
             data.put("msg", Constant.SEARCH_SUCCESS);
         } catch (Exception e) {

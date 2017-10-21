@@ -23,8 +23,11 @@
     <select id="findById" parameterType="string" resultType="Sale">
         SELECT * from tb_sale where id=#{id}
     </select>
-     <select id="querySaleTen"  resultType="map">
+    <select id="querySaleTen" resultType="map">
         SELECT * from tb_sale order by  sale_year DESC, sale_month DESC ,sale_day DESC  LIMIT 10
+    </select>
+    <select id="findSale" resultType="map">
+        SELECT * from tb_sale order by  sale_year DESC, sale_month DESC ,sale_day DESC
     </select>
 
 

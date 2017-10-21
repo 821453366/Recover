@@ -35,7 +35,7 @@ var navs = [{
     "children": [{
         "title": "销售报表",
         "icon": "fa fa-book",
-        "href": "menu/findRecover"
+        "href": "menu/findSale"
     }, {
         "title": "回收报表",
         "icon": "&#xe63c;",

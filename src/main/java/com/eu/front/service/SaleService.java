@@ -25,4 +25,10 @@ public interface SaleService{
 	 * @param id
 	 */
 	void deleteSale(String id) throws Exception;
+
+	/**
+	 * 查找所有销售账单 报表统计
+	 * @return
+	 */
+	List<Map<String, String>> findSale();
 }

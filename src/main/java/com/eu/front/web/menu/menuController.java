@@ -67,5 +67,10 @@ public class menuController extends HttpServlet {
         return "web/reportForm/reportFormRecover";
     }
 
+    @RequestMapping("/findSale")
+    public String findSale() {
+        return "web/reportForm/reportFormSale";
+    }
+
 
 }

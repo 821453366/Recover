@@ -63,4 +63,10 @@ public class SaleServiceImpl implements SaleService {
         stock.setStockStorageId(sale.getSaleStorageId());
         stockDao.addStock(stock);
     }
+
+    @Override
+    public List<Map<String, String>> findSale() {
+
+        return saleDao.findSale();
+    }
 }

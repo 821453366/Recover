@@ -26,7 +26,7 @@
 <body>
 <div class="admin-main">
     <fieldset class="layui-elem-field">
-        <legend>账单出账核算</legend>
+        <legend>回收报表统计</legend>
         <div style="margin: 20px;">
             <table class="site-table layui-table table-hover ">
                 <thead>
@@ -112,7 +112,7 @@
                                 sumCountCapacity += countCapacity;
                                 sumCountPirce += countPirce;
                             }
-                            _html += "<tr style='background-color: rgb(221, 221, 221);'><td colspan='2'>总计：</td><td>" + sumCount + "次</td><td>" + sumCountCapacity + "吨</td><td>" + sumCountPirce + "元</td></tr>"
+                            _html += "<tr style='background-color: rgb(239, 236, 236);'><td colspan='2'>总计：</td><td>" + sumCount + "次</td><td>" + sumCountCapacity + "吨</td><td>" + sumCountPirce + "元</td></tr>"
                         }
                         $("#tr_1").html(_html);
                     });
