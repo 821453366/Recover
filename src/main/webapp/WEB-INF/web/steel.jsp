@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page isELIgnored="false" %>
-<%@ include file="../../../page/tag.jsp" %>
+<%@ include file="../../page/tag.jsp" %>
 <!DOCTYPE html>
 <html>
 

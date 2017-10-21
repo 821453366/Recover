@@ -141,6 +141,13 @@
                 <input type="radio" name="adminSex" value="女" title="女">
             </div>
         </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">权限：</label>
+            <div class="layui-input-block">
+                <input type="radio" name="adminRank" value="1" title="管理员" checked>
+                <input type="radio" name="adminRank" value="2" title="普通用户">
+            </div>
+        </div>
         <div class="layui-input-block">
             <button class="layui-btn" onclick="cl.addUserAjax()">立即提交</button>
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
@@ -187,6 +194,13 @@
                 <label class="layui-form-label">手机号：</label>
                 <div class="layui-input-inline">
                     <input type="text" id="adminPhonePreview" lay-verify="required" placeholder="请输入" autocomplete="off"
+                           class="layui-input" readonly="readonly">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">权限：</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="adminRankPreview" lay-verify="required" placeholder="请输入" autocomplete="off"
                            class="layui-input" readonly="readonly">
                 </div>
             </div>
@@ -241,6 +255,13 @@
                 <div class="layui-input-inline">
                     <input type="text" name="adminPhone" id ="adminPhoneUpdate"lay-verify="required" placeholder="请输入" autocomplete="off"
                            class="layui-input" >
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">权限：</label>
+                <div class="layui-input-block">
+                    <input type="radio" name="adminRank" value="1" title="管理员" checked>
+                    <input type="radio" name="adminRank" value="2" title="普通用户">
                 </div>
             </div>
             <div class="layui-form-item">
@@ -311,13 +332,13 @@
                 $.post("${pageContext.request.contextPath}/user/userInfo",
                     {id:id},
                     function (data) {
-                        console.log(data)
                         let user = data.user[0];
                         $("#adminNamePreview").val(user.adminName);
                         $("#adminRealnamePreview").val(user.adminRealname);
                         $("#adminAgePreview").val(user.adminAge);
                         $("#adminSexPreview").val(user.adminSex);
                         $("#adminPhonePreview").val(user.adminPhone);
+                        $("#adminRankPreview").val(user.adminRank == 1 ?"管理员":"普通用户");
                         $("#adminDatePreview").val(user.adminDate);
                     }
                 )

@@ -21,12 +21,13 @@
 	<link rel="stylesheet" href="${baseurl}/plugins/font-awesome/css/font-awesome.min.css">
 	<script type="text/javascript" src="${baseurl}/js/myjs/jquery.min.js"></script>
 	<script type="text/javascript" src="${baseurl}/plugins/layui/layui.js"></script>
-	<script type="text/javascript" src="${baseurl}/datas/nav.js"></script>
+	<script type="text/javascript" class="nav_script"></script>
 	<script src="${baseurl}/js/index.js"></script>
 
 </head>
 <script type="text/javascript">
     let imgName;
+    var rank;
     $(function () {
         //判断session是否存在
         $.post("${pageContext.request.contextPath}/session",
@@ -36,6 +37,17 @@
                 }
             }
         )
+
+        //权限设置
+        $.post("${pageContext.request.contextPath}/userInfo",
+            function (data) {
+                let user = data.user[0];
+                rank = user.adminRank;
+                alert(rank)
+                var src = "${baseurl}/datas/nav" + rank + ".js";
+                $(".nav_script").attr({src: src});
+            }
+        )
         //显示头像及图片
         $.post("${pageContext.request.contextPath}/userInfo",
             function (data) {
@@ -43,6 +55,8 @@
                 $("#Name").html(user.adminRealname);
             }
         )
+
+
 
     });
     //退出登录
@@ -68,6 +82,7 @@
                 $("#adminAgePreview").val(user.adminAge);
                 $("#adminSexPreview").val(user.adminSex);
                 $("#adminPhonePreview").val(user.adminPhone);
+                $("#adminRankPreview").val(user.adminRank == 1 ?"管理员":"普通用户");
                 $("#adminDatePreview").val(user.adminDate);
             }
         )
@@ -201,6 +216,13 @@
                            class="layui-input" readonly="readonly">
                 </div>
             </div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">权限：</label>
+				<div class="layui-input-inline">
+					<input type="text" id="adminRankPreview" lay-verify="required" placeholder="请输入" autocomplete="off"
+						   class="layui-input" readonly="readonly">
+				</div>
+			</div>
             <div class="layui-form-item">
                 <label class="layui-form-label">账号创建日期：</label>
                 <div class="layui-input-inline">

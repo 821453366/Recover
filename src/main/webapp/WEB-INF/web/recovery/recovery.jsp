@@ -219,7 +219,6 @@
                         userName: recoveryCode
                     },
                     function (data) {
-                        console.log(data)
                         if (data.result) {
                             currentIndex = data.page.currentIndex;
                             totalSize = data.page.totalSize;
@@ -268,7 +267,6 @@
                         $("#recoverySteelId").html("");
                         $("#customerId").html("");
                         $("#storageId").html("");
-                        console.log(data)
                         let customerce = data.customerce;
                         let steel = data.steel;
                         let storage = data.storage;

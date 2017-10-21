@@ -100,7 +100,6 @@
                         userName: recoveryCode
                     },
                     function (data) {
-                        console.log(data)
                         if (data.result) {
                             currentIndex = data.page.currentIndex;
                             totalSize = data.page.totalSize;
