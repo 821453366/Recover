@@ -1,15 +1,11 @@
 package com.eu.front.service.impl;
 
-
 import com.eu.front.dao.LoginDao;
 import com.eu.front.entity.Admin;
 import com.eu.front.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * Created by 马欢欢 on 2017/5/24.
- */
 @Service
 public class LoginServiceImpl implements LoginService {
 
