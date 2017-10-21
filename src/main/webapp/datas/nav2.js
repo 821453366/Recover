@@ -1,15 +1,15 @@
 var navs = [{
     "title": "库存信息",
-    "icon": "fa fa-area-chart",
+    "icon": "fa fa-database",
     "href": "menu/stock",
     "spread": false
 },{
     "title": "报表信息",
-    "icon": "fa fa-fax",
+    "icon": "fa fa-building-o",
     "spread": false,
     "children": [{
         "title": "销售报表",
-        "icon": "fa fa-book",
+        "icon": "&#xe63c;",
         "href": "menu/findSale"
     }, {
         "title": "回收报表",

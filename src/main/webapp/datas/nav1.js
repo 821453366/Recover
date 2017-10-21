@@ -10,31 +10,31 @@ var navs = [{
     "spread": false
 },{
     "title": "客户信息",
-    "icon": "fa fa-newspaper-o",
+    "icon": "fa fa-users",
     "href": "menu/customerce",
     "spread": false
 },{
     "title": "废钢类型",
-    "icon": "fa fa-credit-card-alt",
+    "icon": "fa fa-window-minimize",
     "href": "menu/steel",
     "spread": false
 },{
     "title": "库房类型",
-    "icon": "fa fa-area-chart",
+    "icon": "fa fa-hdd-o",
     "href": "menu/storage",
     "spread": false
 },{
     "title": "库存信息",
-    "icon": "fa fa-area-chart",
+    "icon": "fa fa-database",
     "href": "menu/stock",
     "spread": false
 },{
     "title": "报表信息",
-    "icon": "fa fa-fax",
+    "icon": "fa fa-building-o",
     "spread": false,
     "children": [{
         "title": "销售报表",
-        "icon": "fa fa-book",
+        "icon": "&#xe63c",
         "href": "menu/findSale"
     }, {
         "title": "回收报表",
@@ -56,7 +56,7 @@ var navs = [{
     }]
 },{
     "title": "用户信息",
-    "icon": "fa fa-bar-chart-o",
+    "icon": "fa fa-user-o",
     "href": "menu/user",
     "spread": false
 }];
